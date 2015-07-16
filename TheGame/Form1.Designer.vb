@@ -25,14 +25,14 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.CPUBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HardwarepcbsDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Hardware_pcbsDataSet = New TheGame.hardware_pcbsDataSet()
         Me.GPUBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HDDBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MBBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PSUBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RAMBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.HardwarepcbsDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Hardware_pcbsDataSet = New TheGame.hardware_pcbsDataSet()
         Me.VeciTableAdapter1 = New TheGame.hardware_pcbsDataSetTableAdapters.veciTableAdapter()
         Me.ReceptyTableAdapter1 = New TheGame.hardware_pcbsDataSetTableAdapters.receptyTableAdapter()
         Me.CPUTableAdapter = New TheGame.hardware_pcbsDataSetTableAdapters.CPUTableAdapter()
@@ -43,21 +43,23 @@ Partial Class Form1
         Me.RAMTableAdapter = New TheGame.hardware_pcbsDataSetTableAdapters.RAMTableAdapter()
         Me.MoznesestavyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.CPUBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HardwarepcbsDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Hardware_pcbsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GPUBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HDDBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MBBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PSUBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RAMBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HardwarepcbsDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Hardware_pcbsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MoznesestavyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
+        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Location = New System.Drawing.Point(12, 12)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(202, 23)
+        Me.Button1.Size = New System.Drawing.Size(439, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "0"
         Me.Button1.UseVisualStyleBackColor = True
@@ -66,6 +68,16 @@ Partial Class Form1
         '
         Me.CPUBindingSource.DataMember = "CPU"
         Me.CPUBindingSource.DataSource = Me.HardwarepcbsDataSetBindingSource
+        '
+        'HardwarepcbsDataSetBindingSource
+        '
+        Me.HardwarepcbsDataSetBindingSource.DataSource = Me.Hardware_pcbsDataSet
+        Me.HardwarepcbsDataSetBindingSource.Position = 0
+        '
+        'Hardware_pcbsDataSet
+        '
+        Me.Hardware_pcbsDataSet.DataSetName = "hardware_pcbsDataSet"
+        Me.Hardware_pcbsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GPUBindingSource
         '
@@ -103,16 +115,6 @@ Partial Class Form1
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.TextBox1.Size = New System.Drawing.Size(439, 408)
         Me.TextBox1.TabIndex = 1
-        '
-        'HardwarepcbsDataSetBindingSource
-        '
-        Me.HardwarepcbsDataSetBindingSource.DataSource = Me.Hardware_pcbsDataSet
-        Me.HardwarepcbsDataSetBindingSource.Position = 0
-        '
-        'Hardware_pcbsDataSet
-        '
-        Me.Hardware_pcbsDataSet.DataSetName = "hardware_pcbsDataSet"
-        Me.Hardware_pcbsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'VeciTableAdapter1
         '
@@ -157,13 +159,13 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Generator"
         CType(Me.CPUBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HardwarepcbsDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Hardware_pcbsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GPUBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HDDBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MBBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PSUBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RAMBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HardwarepcbsDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Hardware_pcbsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MoznesestavyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -42,8 +42,8 @@ Public Class Form1
                                         Dim komp As New pc
                                         komp.mb = mb
                                         komp.cpu = cpu
-                                        komp.gpu() = gpu()
-                                        komp.ram() = ram()
+                                        komp.gpu = gpu
+                                        komp.ram = ram
                                         komp.hdd = hdd
                                         komp.psu = psu
 
@@ -69,7 +69,7 @@ Public Class Form1
         Button1.Enabled = True
     End Sub
 
-    Private Function GetTree(id As Integer, count As Integer) As TreeNode
+    Public Function GetTree(id As Integer, count As Integer) As TreeNode
         Dim node As New TreeNode(count & " " & Me.Hardware_pcbsDataSet.veci(id).nazev)
         Dim suroviny() As String = GetRecept(id)
         If suroviny.Length > 0 Then
@@ -82,7 +82,7 @@ Public Class Form1
         Return node
     End Function
 
-    Private Function GetRecept(id As Integer) As String()
+    Public Function GetRecept(id As Integer) As String()
         Dim request = Me.Hardware_pcbsDataSet.recepty.Select("vyrobek=" & id)
         If request.Length > 0 Then
             Return request(0)("suroviny").split(";")
@@ -92,15 +92,15 @@ Public Class Form1
         End If
     End Function
 
-    Private Function GetItemInfo(id As Integer) As TheGame.hardware_pcbsDataSet.veciRow
+    Public Function GetItemInfo(id As Integer) As TheGame.hardware_pcbsDataSet.veciRow
         Return Me.Hardware_pcbsDataSet.veci.Select("idveci=" & id).FirstOrDefault()
     End Function
 
-    Private Function GetItemInfo(id As Integer, type As String) As TheGame.hardware_pcbsDataSet.veciRow
+    Public Function GetItemInfo(id As Integer, type As String) As TheGame.hardware_pcbsDataSet.veciRow
         Return Me.Hardware_pcbsDataSet.veci.Select("idveci=" & id & " AND typ='" & type & "'").First()
     End Function
 
-    Shared Function GetVykon(imb As Integer, icpu As Integer, igpu() As Integer, iram() As Integer, ihdd As Integer, ipsu As Integer) As Decimal
+    Public Function GetVykon(imb As Integer, icpu As Integer, igpu() As Integer, iram() As Integer, ihdd As Integer, ipsu As Integer) As Decimal
         Dim spotreba As Integer = 0
         'Motherboard
         Dim mb As TheGame.hardware_pcbsDataSet.veciRow = GetItemInfo(imb, "mb")
@@ -141,7 +141,7 @@ Public Class Form1
         Return vykon
     End Function
 
-    Private Function GetVykonRAM(ramkap As Integer) As Decimal
+    Public Function GetVykonRAM(ramkap As Integer) As Decimal
         Select Case ramkap
             Case Is >= 64
                 Return 2.0
@@ -168,7 +168,7 @@ Public Class Form1
         End Select
     End Function
 
-    Private Function GetVykonHDD(hddvyk As Integer) As Decimal
+    Public Function GetVykonHDD(hddvyk As Integer) As Decimal
         Select Case hddvyk
             Case 1
                 Return 0.2
@@ -195,7 +195,7 @@ Public Class Form1
         End Select
     End Function
 
-    Private Function SelectMore(table As DataTable, count As Integer) As DataRow()()
+    Public Function SelectMore(table As DataTable, count As Integer) As DataRow()()
         If count > 1 Then
             Dim VyberMin = SelectMore(table, count - 1)
             Dim vysledek As New List(Of DataRow())(table.Rows.Count * VyberMin.Length)
@@ -221,7 +221,7 @@ Public Class Form1
         End If
     End Function
 
-    Shared Function id(p1() As DataRow) As Integer()
+    Public Function id(p1() As DataRow) As Integer()
         Dim vysl(p1.Length - 1) As Integer
         For i As Integer = 0 To p1.Length - 1
             vysl(i) = p1(i)("idveci")

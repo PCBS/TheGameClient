@@ -148,6 +148,11 @@ Partial Class Form1
         '
         Me.RAMTableAdapter.ClearBeforeFill = True
         '
+        'MoznesestavyBindingSource
+        '
+        Me.MoznesestavyBindingSource.DataMember = "mozne_sestavy"
+        Me.MoznesestavyBindingSource.DataSource = Me.HardwarepcbsDataSetBindingSource
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

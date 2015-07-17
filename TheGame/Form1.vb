@@ -8,12 +8,14 @@ Public Class Form1
         Dim ram() As DataRow
         Dim hdd As hardware_pcbsDataSet.HDDRow
         Dim psu As hardware_pcbsDataSet.PSURow
-        Public ReadOnly Property vykon As Integer
-            Get
-                Return CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
-            End Get
-        End Property
-
+        Dim vykon As Integer
+        Public Function id(p1() As DataRow) As Integer()
+            Dim vysl(p1.Length - 1) As Integer
+            For i As Integer = 0 To p1.Length - 1
+                vysl(i) = p1(i)("idveci")
+            Next
+            Return vysl
+        End Function
     End Structure
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -28,39 +30,65 @@ Public Class Form1
     End Sub
 
     Private Sub VsechnyKompy()
-        Dim rr As New StreamWriter("C:\temp\kompy.csv", False)
-        'Try
-        With Me.Hardware_pcbsDataSet
-            For Each mb As hardware_pcbsDataSet.MBRow In .MB
-                For Each cpu As hardware_pcbsDataSet.CPURow In .CPU.Select("socket='" & mb.socket & "'")
-                    For Each gpu() As DataRow In SelectMore(.GPU, mb.sloty.Split(";")(0))
-                        For Each ram() As DataRow In SelectMore(.RAM, mb.sloty.Split(";")(1))
-                            For Each hdd As hardware_pcbsDataSet.HDDRow In .HDD
-                                For Each psu As hardware_pcbsDataSet.PSURow In .PSU
-                                    Dim vykon = CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
-                                    If vykon > 0 Then
-                                        Dim komp As New pc
-                                        komp.mb = mb
-                                        komp.cpu = cpu
-                                        komp.gpu = gpu
-                                        komp.ram = ram
-                                        komp.hdd = hdd
-                                        komp.psu = psu
 
-                                    End If
-                                    Button1.Text = Long.Parse(Button1.Text) + 1
-                                    Application.DoEvents()
-                                Next
-                            Next
-                        Next
-                    Next
-                Next
-            Next
-        End With
-        'Catch ex As Exception
-        '    MsgBox(Err.Number & " - " & Err.Description, MsgBoxStyle.Critical, ex.ToString)
-        'End Try
+        Dim rr As New StreamWriter("C:\temp\kompy.csv", False)
+        Try
+            With Me.Hardware_pcbsDataSet
+                Parallel.ForEach(Of hardware_pcbsDataSet.MBRow)(.MB, Sub(mb As hardware_pcbsDataSet.MBRow)
+                                                                         'For Each mb As hardware_pcbsDataSet.MBRow In .MB
+                                                                         For Each cpu As hardware_pcbsDataSet.CPURow In .CPU.Select("socket='" & mb.socket & "'")
+                                                                             For Each gpu() As DataRow In SelectMore(.GPU, mb.sloty.Split(";")(0))
+                                                                                 For Each ram() As DataRow In SelectMore(.RAM, mb.sloty.Split(";")(1))
+                                                                                     For Each hdd As hardware_pcbsDataSet.HDDRow In .HDD
+                                                                                         For Each psu As hardware_pcbsDataSet.PSURow In .PSU
+                                                                                             Dim vykon = CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
+                                                                                             If vykon > 0 Then
+                                                                                                 'Dim komp As New pc
+                                                                                                 'komp.mb = mb
+                                                                                                 'komp.cpu = cpu
+                                                                                                 'komp.gpu = gpu
+                                                                                                 'komp.ram = ram
+                                                                                                 'komp.hdd = hdd
+                                                                                                 'komp.psu = psu
+                                                                                                 'komp.vykon = vykon
+                                                                                                 'getprice
+                                                                                                 SyncLock rr
+                                                                                                     rr.WriteLine(String.Join(", ", vykon, mb.nazev, cpu.nazev, GetNames(gpu), GetNames(ram), hdd.nazev, psu.nazev))
+                                                                                                 End SyncLock
+                                                                                             End If
+                                                                                             'vytvorit row, pridat serializaci a vlozit do tabulky
+                                                                                             'Hardware_pcbsDataSet.mozne_sestavy.Rows.Add()
+                                                                                             Button1.Text = Long.Parse(Button1.Text) + 1
+                                                                                             'Application.DoEvents()
+                                                                                         Next
+                                                                                     Next
+                                                                                 Next
+                                                                             Next
+                                                                         Next
+                                                                         'Next
+                                                                     End Sub)
+            End With
+        Catch ex As Exception
+            MsgBox(Err.Number & " - " & Err.Description, MsgBoxStyle.Critical, ex.ToString)
+        End Try
         rr.Close()
+        'Dim temp As String = My.Computer.FileSystem.GetTempFileName
+        'Dim rw As New StreamWriter(temp)
+        'With Me.Hardware_pcbsDataSet
+        '    For Each mb In .MB
+        '        rw.WriteLine(mb.nazev & ",")
+        '    Next
+        '    Dim rr As New StreamReader(temp)
+        '    temp = My.Computer.FileSystem.GetTempFileName
+        '    rw = New StreamWriter(temp)
+        '    While Not rr.EndOfStream
+        '        Dim mb As hardware_pcbsDataSet.MBRow = .MB.Select("nazev='" & rr.ReadLine.TrimEnd(",") & "'")(0)
+        '        For Each cpu As hardware_pcbsDataSet.CPURow In .CPU.Select("socket='" & mb.socket)
+        '            rw.WriteLine(mb.nazev & "," & cpu.nazev)
+        '        Next
+        '    End While
+
+        'End With
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -90,6 +118,15 @@ Public Class Form1
             Dim retur() As String = {}
             Return retur
         End If
+    End Function
+
+    Public Function GetNames(row() As DataRow) As String
+        Dim str As String = ""
+        For Each i In row
+            str &= i("nazev")
+        Next
+        str = str.TrimEnd(",")
+        Return str
     End Function
 
     Public Function GetItemInfo(id As Integer) As TheGame.hardware_pcbsDataSet.veciRow

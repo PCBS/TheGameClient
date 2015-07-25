@@ -1,6 +1,7 @@
 ﻿Module Module1
     Dim trh As New TheGameGenerator.trhDataSetTableAdapters.veciTableAdapter()
     Dim waittime As trhDataSet.veciRow
+    Dim idsurovin() = {1, 2, 3, 4}
     Sub Main()
         Console.Title = 0
         trh.Fill((New trhDataSet).veci)
@@ -121,10 +122,18 @@
         Throw New NotImplementedException
     End Function
 
-    Private Function GetCost(id As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable)
+    Private Function GetCost(id As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable) As Integer
         Throw New NotImplementedException
-        Dim recept = GetRecept(id, recepty)
+        Dim recept As Dictionary(Of Integer, Integer) = GetRecept(id, recepty)
+        Dim surovinyOnly As Boolean = True
+        For Each part In recept
+            If Not idsurovin.Contains(part.Key) Then
+                surovinyOnly = False
+            End If
+        Next
+        If surovinyOnly Then
 
+        End If
     End Function
 
     Private Function GetCost(ParamArray ids() As Integer)

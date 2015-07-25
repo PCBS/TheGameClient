@@ -2,12 +2,12 @@
 
 Public Class Form1
     Structure pc
-        Dim mb As hardware_pcbsDataSet.MBRow
-        Dim cpu As hardware_pcbsDataSet.CPURow
+        Dim mb As trhDataSet.MBRow
+        Dim cpu As trhDataSet.CPURow
         Dim gpu() As DataRow
         Dim ram() As DataRow
-        Dim hdd As hardware_pcbsDataSet.HDDRow
-        Dim psu As hardware_pcbsDataSet.PSURow
+        Dim hdd As trhDataSet.HDDRow
+        Dim psu As trhDataSet.PSURow
         Dim vykon As Integer
         Public Function id(p1() As DataRow) As Integer()
             Dim vysl(p1.Length - 1) As Integer
@@ -19,54 +19,54 @@ Public Class Form1
     End Structure
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.RAMTableAdapter.Fill(Me.Hardware_pcbsDataSet.RAM)
-        Me.PSUTableAdapter.Fill(Me.Hardware_pcbsDataSet.PSU)
-        Me.MBTableAdapter.Fill(Me.Hardware_pcbsDataSet.MB)
-        Me.HDDTableAdapter.Fill(Me.Hardware_pcbsDataSet.HDD)
-        Me.GPUTableAdapter.Fill(Me.Hardware_pcbsDataSet.GPU)
-        Me.CPUTableAdapter.Fill(Me.Hardware_pcbsDataSet.CPU)
-        Me.VeciTableAdapter1.Fill(Me.Hardware_pcbsDataSet.veci)
-        Me.ReceptyTableAdapter1.Fill(Me.Hardware_pcbsDataSet.recepty)
+        Me.RAMTableAdapter.Fill(Me.trhDataSet.RAM)
+        Me.PSUTableAdapter.Fill(Me.trhDataSet.PSU)
+        Me.MBTableAdapter.Fill(Me.trhDataSet.MB)
+        Me.HDDTableAdapter.Fill(Me.trhDataSet.HDD)
+        Me.GPUTableAdapter.Fill(Me.trhDataSet.GPU)
+        Me.CPUTableAdapter.Fill(Me.trhDataSet.CPU)
+        Me.VeciTableAdapter1.Fill(Me.trhDataSet.veci)
+        Me.ReceptyTableAdapter1.Fill(Me.trhDataSet.recepty)
     End Sub
 
     Private Sub VsechnyKompy()
 
         Dim rr As New StreamWriter("C:\temp\kompy.csv", False)
         Try
-            With Me.Hardware_pcbsDataSet
-                Parallel.ForEach(Of hardware_pcbsDataSet.MBRow)(.MB, Sub(mb As hardware_pcbsDataSet.MBRow)
-                                                                         'For Each mb As hardware_pcbsDataSet.MBRow In .MB
-                                                                         For Each cpu As hardware_pcbsDataSet.CPURow In .CPU.Select("socket='" & mb.socket & "'")
-                                                                             For Each gpu() As DataRow In SelectMore(.GPU, mb.sloty.Split(";")(0))
-                                                                                 For Each ram() As DataRow In SelectMore(.RAM, mb.sloty.Split(";")(1))
-                                                                                     For Each hdd As hardware_pcbsDataSet.HDDRow In .HDD
-                                                                                         For Each psu As hardware_pcbsDataSet.PSURow In .PSU
-                                                                                             Dim vykon = CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
-                                                                                             If vykon > 0 Then
-                                                                                                 'Dim komp As New pc
-                                                                                                 'komp.mb = mb
-                                                                                                 'komp.cpu = cpu
-                                                                                                 'komp.gpu = gpu
-                                                                                                 'komp.ram = ram
-                                                                                                 'komp.hdd = hdd
-                                                                                                 'komp.psu = psu
-                                                                                                 'komp.vykon = vykon
-                                                                                                 'getprice
-                                                                                                 SyncLock rr
-                                                                                                     rr.WriteLine(String.Join(", ", vykon, mb.nazev, cpu.nazev, GetNames(gpu), GetNames(ram), hdd.nazev, psu.nazev))
-                                                                                                 End SyncLock
-                                                                                             End If
-                                                                                             'vytvorit row, pridat serializaci a vlozit do tabulky
-                                                                                             'Hardware_pcbsDataSet.mozne_sestavy.Rows.Add()
-                                                                                             Button1.Text = Long.Parse(Button1.Text) + 1
-                                                                                             'Application.DoEvents()
-                                                                                         Next
-                                                                                     Next
-                                                                                 Next
-                                                                             Next
-                                                                         Next
-                                                                         'Next
-                                                                     End Sub)
+            With Me.trhDataSet 'for, not for each
+                Parallel.ForEach(Of trhDataSet.MBRow)(.MB, Sub(mb As trhDataSet.MBRow)
+                                                               'For Each mb As trhDataSet.MBRow In .MB
+                                                               For Each cpu As trhDataSet.CPURow In .CPU.Select("socket='" & mb.socket & "'")
+                                                                   For Each gpu() As DataRow In SelectMore(.GPU, mb.sloty.Split(";")(0))
+                                                                       For Each ram() As DataRow In SelectMore(.RAM, mb.sloty.Split(";")(1))
+                                                                           For Each hdd As trhDataSet.HDDRow In .HDD
+                                                                               For Each psu As trhDataSet.PSURow In .PSU
+                                                                                   Dim vykon = CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
+                                                                                   If vykon > 0 Then
+                                                                                       'Dim komp As New pc
+                                                                                       'komp.mb = mb
+                                                                                       'komp.cpu = cpu
+                                                                                       'komp.gpu = gpu
+                                                                                       'komp.ram = ram
+                                                                                       'komp.hdd = hdd
+                                                                                       'komp.psu = psu
+                                                                                       'komp.vykon = vykon
+                                                                                       'getprice
+                                                                                       SyncLock rr
+                                                                                           rr.WriteLine(String.Join(", ", vykon, mb.nazev, cpu.nazev, GetNames(gpu), GetNames(ram), hdd.nazev, psu.nazev))
+                                                                                       End SyncLock
+                                                                                   End If
+                                                                                   'vytvorit row, pridat serializaci a vlozit do tabulky
+                                                                                   'trhDataSet.mozne_sestavy.Rows.Add()
+                                                                                   Button1.Text = Long.Parse(Button1.Text) + 1
+                                                                                   'Application.DoEvents()
+                                                                               Next
+                                                                           Next
+                                                                       Next
+                                                                   Next
+                                                               Next
+                                                               'Next
+                                                           End Sub)
             End With
         Catch ex As Exception
             MsgBox(Err.Number & " - " & Err.Description, MsgBoxStyle.Critical, ex.ToString)
@@ -74,7 +74,7 @@ Public Class Form1
         rr.Close()
         'Dim temp As String = My.Computer.FileSystem.GetTempFileName
         'Dim rw As New StreamWriter(temp)
-        'With Me.Hardware_pcbsDataSet
+        'With Me.trhDataSet
         '    For Each mb In .MB
         '        rw.WriteLine(mb.nazev & ",")
         '    Next
@@ -82,8 +82,8 @@ Public Class Form1
         '    temp = My.Computer.FileSystem.GetTempFileName
         '    rw = New StreamWriter(temp)
         '    While Not rr.EndOfStream
-        '        Dim mb As hardware_pcbsDataSet.MBRow = .MB.Select("nazev='" & rr.ReadLine.TrimEnd(",") & "'")(0)
-        '        For Each cpu As hardware_pcbsDataSet.CPURow In .CPU.Select("socket='" & mb.socket)
+        '        Dim mb As trhDataSet.MBRow = .MB.Select("nazev='" & rr.ReadLine.TrimEnd(",") & "'")(0)
+        '        For Each cpu As trhDataSet.CPURow In .CPU.Select("socket='" & mb.socket)
         '            rw.WriteLine(mb.nazev & "," & cpu.nazev)
         '        Next
         '    End While
@@ -98,7 +98,7 @@ Public Class Form1
     End Sub
 
     Public Function GetTree(id As Integer, count As Integer) As TreeNode
-        Dim node As New TreeNode(count & " " & Me.Hardware_pcbsDataSet.veci(id).nazev)
+        Dim node As New TreeNode(count & " " & Me.trhDataSet.veci(id).nazev)
         Dim suroviny() As String = GetRecept(id)
         If suroviny.Length > 0 Then
             For i As Integer = 0 To suroviny.Length - 1
@@ -111,7 +111,7 @@ Public Class Form1
     End Function
 
     Public Function GetRecept(id As Integer) As String()
-        Dim request = Me.Hardware_pcbsDataSet.recepty.Select("vyrobek=" & id)
+        Dim request = Me.trhDataSet.recepty.Select("vyrobek=" & id)
         If request.Length > 0 Then
             Return request(0)("suroviny").split(";")
         Else
@@ -129,24 +129,24 @@ Public Class Form1
         Return str
     End Function
 
-    Public Function GetItemInfo(id As Integer) As TheGame.hardware_pcbsDataSet.veciRow
-        Return Me.Hardware_pcbsDataSet.veci.Select("idveci=" & id).FirstOrDefault()
+    Public Function GetItemInfo(id As Integer) As TheGame.trhDataSet.veciRow
+        Return Me.trhDataSet.veci.Select("idveci=" & id).FirstOrDefault()
     End Function
 
-    Public Function GetItemInfo(id As Integer, type As String) As TheGame.hardware_pcbsDataSet.veciRow
-        Return Me.Hardware_pcbsDataSet.veci.Select("idveci=" & id & " AND typ='" & type & "'").First()
+    Public Function GetItemInfo(id As Integer, type As String) As TheGame.trhDataSet.veciRow
+        Return Me.trhDataSet.veci.Select("idveci=" & id & " AND typ='" & type & "'").First()
     End Function
 
     Public Function GetVykon(imb As Integer, icpu As Integer, igpu() As Integer, iram() As Integer, ihdd As Integer, ipsu As Integer) As Decimal
         Dim spotreba As Integer = 0
         'Motherboard
-        Dim mb As TheGame.hardware_pcbsDataSet.veciRow = GetItemInfo(imb, "mb")
+        Dim mb As TheGame.trhDataSet.veciRow = GetItemInfo(imb, "mb")
         spotreba += mb.spotreba
         'CPU
-        Dim cpu As TheGame.hardware_pcbsDataSet.veciRow = GetItemInfo(icpu, "cpu")
+        Dim cpu As TheGame.trhDataSet.veciRow = GetItemInfo(icpu, "cpu")
         spotreba += cpu.spotreba
         'GPU
-        Dim gpu(igpu.Count) As TheGame.hardware_pcbsDataSet.veciRow
+        Dim gpu(igpu.Count) As TheGame.trhDataSet.veciRow
         Dim gpupow As Decimal = 0
         For i As Integer = 0 To igpu.Count - 1
             gpu(i) = GetItemInfo(igpu(i), "gpu")
@@ -155,7 +155,7 @@ Public Class Form1
         Next
         gpupow *= Math.Pow(0.9, gpu.Count)
         'RAM
-        Dim ram(iram.Count) As TheGame.hardware_pcbsDataSet.veciRow
+        Dim ram(iram.Count) As TheGame.trhDataSet.veciRow
         Dim ramkap As Integer = 0
         For i As Integer = 0 To iram.Count - 1
             ram(i) = GetItemInfo(iram(i), "ram")
@@ -164,11 +164,11 @@ Public Class Form1
         Next
         Dim rampow As Decimal = GetVykonRAM(ramkap)
         'HDD
-        Dim hdd As TheGame.hardware_pcbsDataSet.veciRow = GetItemInfo(ihdd, "hdd")
+        Dim hdd As TheGame.trhDataSet.veciRow = GetItemInfo(ihdd, "hdd")
         Dim hddpow As Decimal = GetVykonHDD(hdd.vykon)
         spotreba += hdd.spotreba
         'PSU
-        Dim psu As TheGame.hardware_pcbsDataSet.veciRow = GetItemInfo(ipsu, "psu")
+        Dim psu As TheGame.trhDataSet.veciRow = GetItemInfo(ipsu, "psu")
         'Vykon
         Dim vykon = Math.Min(cpu.vykon, gpupow) * 2 * rampow * hddpow
         If mb.sloty.Split(";")(0) < ram.Count Then vykon = 0

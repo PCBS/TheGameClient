@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="hardware_pcbsDataSet" targetNamespace="http://tempuri.org/hardware_pcbsDataSet.xsd" xmlns:mstns="http://tempuri.org/hardware_pcbsDataSet.xsd" xmlns="http://tempuri.org/hardware_pcbsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="trhDataSet" targetNamespace="http://tempuri.org/trhDataSet.xsd" xmlns:mstns="http://tempuri.org/trhDataSet.xsd" xmlns="http://tempuri.org/trhDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="hardware_pcbsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hardware_pcbsConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TheGame.My.MySettings.GlobalReference.Default.hardware_pcbsConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="trhConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="trhConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TheGame.My.MySettings.GlobalReference.Default.trhConnectionString" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hraciTableAdapter" GeneratorDataComponentClassName="hraciTableAdapter" Name="hraci" UserDataComponentName="hraciTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.hraci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.hraci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `hraci` WHERE ((`idhrace` = @p1) AND (`jmeno` = @p2) AND (`heslo` = @p3) AND (`vlastnictvi` = @p4) AND (`body` = @p5) AND (`vyzkum` = @p6))</CommandText>
@@ -73,7 +73,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="kuponyTableAdapter" GeneratorDataComponentClassName="kuponyTableAdapter" Name="kupony" UserDataComponentName="kuponyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.kupony" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.kupony" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `kupony` WHERE ((`kod` = @p1) AND (`obsah` = @p2) AND (`cas` = @p3))</CommandText>
@@ -124,7 +124,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="logTableAdapter" GeneratorDataComponentClassName="logTableAdapter" Name="log" UserDataComponentName="logTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO `log` (`cas`, `hrac`, `text`) VALUES (@p1, @p2, @p3)</CommandText>
@@ -150,9 +150,58 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mozne_sestavyTableAdapter" GeneratorDataComponentClassName="mozne_sestavyTableAdapter" Name="mozne_sestavy" UserDataComponentName="mozne_sestavyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.mozne_sestavy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `mozne_sestavy` WHERE ((`id` = @p1) AND (`vykon` = @p2))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `mozne_sestavy` (`id`, `vykon`, `komponenty`) VALUES (@p1, @p2, @p3)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="komponenty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `vykon`, `komponenty` FROM `mozne_sestavy`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `mozne_sestavy` SET `id` = @p1, `vykon` = @p2, `komponenty` = @p3 WHERE ((`id` = @p4) AND (`vykon` = @p5))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="komponenty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="vykon" DataSetColumn="vykon" />
+              <Mapping SourceColumn="komponenty" DataSetColumn="komponenty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="obchodTableAdapter" GeneratorDataComponentClassName="obchodTableAdapter" Name="obchod" UserDataComponentName="obchodTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.obchod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.obchod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `obchod` WHERE ((`idnab` = @p1) AND (`hrac` = @p2) AND (`nabizi` = @p3) AND (`mnoznabizi` = @p4) AND (`chce` = @p5) AND (`mnozchce` = @p6))</CommandText>
@@ -216,7 +265,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="receptyTableAdapter" GeneratorDataComponentClassName="receptyTableAdapter" Name="recepty" UserDataComponentName="receptyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.recepty" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.recepty" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `recepty` WHERE ((`idreceptu` = @p1) AND (`vyrobek` = @p2) AND (`suroviny` = @p3) AND (`doba` = @p4) AND (`vyzkum` = @p5))</CommandText>
@@ -275,7 +324,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sestavyTableAdapter" GeneratorDataComponentClassName="sestavyTableAdapter" Name="sestavy" UserDataComponentName="sestavyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.sestavy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.sestavy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `sestavy` WHERE ((`idsestavy` = @p1) AND (`hrac` = @p2) AND (`vykon` = @p3) AND (`spotreba` = @p4) AND (`obsah` = @p5) AND (`sbercas` = @p6) AND (`vyzkum` = @p7))</CommandText>
@@ -344,7 +393,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="veciTableAdapter" GeneratorDataComponentClassName="veciTableAdapter" Name="veci" UserDataComponentName="veciTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.veci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.veci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `veci` WHERE ((`idveci` = @p1) AND (`nazev` = @p2) AND (`typ` = @p3) AND (`vykon` = @p4) AND (`spotreba` = @p5) AND (`socket` = @p6) AND (`sloty` = @p7))</CommandText>
@@ -416,7 +465,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vyrobaTableAdapter" GeneratorDataComponentClassName="vyrobaTableAdapter" Name="vyroba" UserDataComponentName="vyrobaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.vyroba" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.vyroba" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `vyroba` WHERE ((`idvyroby` = @p1) AND (`hrac` = @p2) AND (`recept` = @p3) AND (`pocet` = @p4) AND (`hotovo` = @p5))</CommandText>
@@ -475,7 +524,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vyzkumyTableAdapter" GeneratorDataComponentClassName="vyzkumyTableAdapter" Name="vyzkumy" UserDataComponentName="vyzkumyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.vyzkumy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.vyzkumy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `vyzkumy` WHERE ((`idvyzkumu` = @p1) AND (`nazev` = @p2) AND (`body` = @p3))</CommandText>
@@ -527,10 +576,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Aktivita_vs_vykonTableAdapter" GeneratorDataComponentClassName="Aktivita_vs_vykonTableAdapter" Name="Aktivita_vs_vykon" UserDataComponentName="Aktivita_vs_vykonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.Aktivita_vs_vykon" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `jmeno`, `aktivita`, `sum(s.vykon)` FROM `hardware_pcbs`.`Aktivita_vs_vykon`</CommandText>
+                    <CommandText>SELECT `jmeno`, `aktivita`, `sum(s.vykon)` FROM `trh`.`Aktivita_vs_vykon`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -543,84 +592,12 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HraciByVykonSestavTableAdapter" GeneratorDataComponentClassName="HraciByVykonSestavTableAdapter" Name="HraciByVykonSestav" UserDataComponentName="HraciByVykonSestavTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.HraciByVykonSestav" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `jmeno`, `sum(s.vykon)` FROM `hardware_pcbs`.`HraciByVykonSestav`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
-              <Mapping SourceColumn="sum(s.vykon)" DataSetColumn="sum(s_vykon)" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LogAktivitaTableAdapter" GeneratorDataComponentClassName="LogAktivitaTableAdapter" Name="LogAktivita" UserDataComponentName="LogAktivitaTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.LogAktivita" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `Aktivita`, `jmeno` FROM `hardware_pcbs`.`LogAktivita`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Aktivita" DataSetColumn="Aktivita" />
-              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NajponukanajsieTableAdapter" GeneratorDataComponentClassName="NajponukanajsieTableAdapter" Name="Najponukanajsie" UserDataComponentName="NajponukanajsieTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.Najponukanajsie" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `Vec`, `Pocet` FROM `hardware_pcbs`.`Najponukanajsie`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Vec" DataSetColumn="Vec" />
-              <Mapping SourceColumn="Pocet" DataSetColumn="Pocet" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Prehled trhuTableAdapter" GeneratorDataComponentClassName="Prehled_trhuTableAdapter" Name="Prehled trhu" UserDataComponentName="Prehled trhuTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.`Prehled trhu`" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idnab`, `jmeno`, `nazevNabizi`, `mnoznabizi`, `nazevChce`, `mnozchce` FROM `hardware_pcbs`.`Prehled trhu`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="idnab" DataSetColumn="idnab" />
-              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
-              <Mapping SourceColumn="nazevNabizi" DataSetColumn="nazevNabizi" />
-              <Mapping SourceColumn="mnoznabizi" DataSetColumn="mnoznabizi" />
-              <Mapping SourceColumn="nazevChce" DataSetColumn="nazevChce" />
-              <Mapping SourceColumn="mnozchce" DataSetColumn="mnozchce" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CPUTableAdapter" GeneratorDataComponentClassName="CPUTableAdapter" Name="CPU" UserDataComponentName="CPUTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.CPU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`CPU`</CommandText>
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`CPU`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -640,10 +617,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GPUTableAdapter" GeneratorDataComponentClassName="GPUTableAdapter" Name="GPU" UserDataComponentName="GPUTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.GPU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`GPU`</CommandText>
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`GPU`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -663,10 +640,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HDDTableAdapter" GeneratorDataComponentClassName="HDDTableAdapter" Name="HDD" UserDataComponentName="HDDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.HDD" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`HDD`</CommandText>
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`HDD`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -681,15 +658,49 @@
               <Mapping SourceColumn="socket" DataSetColumn="socket" />
               <Mapping SourceColumn="sloty" DataSetColumn="sloty" />
               <Mapping SourceColumn="popis" DataSetColumn="popis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HraciByVykonSestavTableAdapter" GeneratorDataComponentClassName="HraciByVykonSestavTableAdapter" Name="HraciByVykonSestav" UserDataComponentName="HraciByVykonSestavTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `jmeno`, `sum(s.vykon)` FROM `trh`.`HraciByVykonSestav`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
+              <Mapping SourceColumn="sum(s.vykon)" DataSetColumn="sum(s_vykon)" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LogAktivitaTableAdapter" GeneratorDataComponentClassName="LogAktivitaTableAdapter" Name="LogAktivita" UserDataComponentName="LogAktivitaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Aktivita`, `jmeno` FROM `trh`.`LogAktivita`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Aktivita" DataSetColumn="Aktivita" />
+              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MBTableAdapter" GeneratorDataComponentClassName="MBTableAdapter" Name="MB" UserDataComponentName="MBTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.MB" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`MB`</CommandText>
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`MB`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -707,12 +718,46 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PocetKuponuTableAdapter" GeneratorDataComponentClassName="PocetKuponuTableAdapter" Name="PocetKuponu" UserDataComponentName="PocetKuponuTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NajponukanajsieTableAdapter" GeneratorDataComponentClassName="NajponukanajsieTableAdapter" Name="Najponukanajsie" UserDataComponentName="NajponukanajsieTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.PocetKuponu" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `kupony`, `jmeno` FROM `hardware_pcbs`.`PocetKuponu`</CommandText>
+                    <CommandText>SELECT `Vec`, `Pocet` FROM `trh`.`Najponukanajsie`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Vec" DataSetColumn="Vec" />
+              <Mapping SourceColumn="Pocet" DataSetColumn="Pocet" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NajZostavaTableAdapter" GeneratorDataComponentClassName="NajZostavaTableAdapter" Name="NajZostava" UserDataComponentName="NajZostavaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `jmeno`, `MAX(``vykon``)` FROM `trh`.`NajZostava`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
+              <Mapping SourceColumn="MAX(`vykon`)" DataSetColumn="MAX(`vykon`)" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PocetKuponuTableAdapter" GeneratorDataComponentClassName="PocetKuponuTableAdapter" Name="PocetKuponu" UserDataComponentName="PocetKuponuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `kupony`, `jmeno` FROM `trh`.`PocetKuponu`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -724,12 +769,33 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PSUTableAdapter" GeneratorDataComponentClassName="PSUTableAdapter" Name="PSU" UserDataComponentName="PSUTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Prehled trhuTableAdapter" GeneratorDataComponentClassName="Prehled_trhuTableAdapter" Name="Prehled trhu" UserDataComponentName="Prehled trhuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.PSU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`PSU`</CommandText>
+                    <CommandText>SELECT `idnab`, `jmeno`, `nazevNabizi`, `mnoznabizi`, `nazevChce`, `mnozchce` FROM `trh`.`Prehled trhu`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idnab" DataSetColumn="idnab" />
+              <Mapping SourceColumn="jmeno" DataSetColumn="jmeno" />
+              <Mapping SourceColumn="nazevNabizi" DataSetColumn="nazevNabizi" />
+              <Mapping SourceColumn="mnoznabizi" DataSetColumn="mnoznabizi" />
+              <Mapping SourceColumn="nazevChce" DataSetColumn="nazevChce" />
+              <Mapping SourceColumn="mnozchce" DataSetColumn="mnozchce" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PSUTableAdapter" GeneratorDataComponentClassName="PSUTableAdapter" Name="PSU" UserDataComponentName="PSUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`PSU`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -749,10 +815,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RAMTableAdapter" GeneratorDataComponentClassName="RAMTableAdapter" Name="RAM" UserDataComponentName="RAMTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.RAM" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `hardware_pcbs`.`RAM`</CommandText>
+                    <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`RAM`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -772,10 +838,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vykon_vs_KuponyTableAdapter" GeneratorDataComponentClassName="Vykon_vs_KuponyTableAdapter" Name="Vykon_vs_Kupony" UserDataComponentName="Vykon_vs_KuponyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.Vykon_vs_Kupony" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `jmeno`, `vykon`, `kupony` FROM `hardware_pcbs`.`Vykon_vs_Kupony`</CommandText>
+                    <CommandText>SELECT `jmeno`, `vykon`, `kupony` FROM `trh`.`Vykon_vs_Kupony`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -788,81 +854,12 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="moznesestavyTableAdapter" GeneratorDataComponentClassName="moznesestavyTableAdapter" Name="moznesestavy" UserDataComponentName="moznesestavyTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="hardware_pcbsConnectionString (MySettings)" DbObjectName="hardware_pcbs.moznesestavy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `moznesestavy` WHERE ((`idsestavy` = @p1) AND (`hrac` = @p2) AND (`vykon` = @p3) AND (`spotreba` = @p4) AND (`obsah` = @p5) AND (`sbercas` = @p6) AND (`vyzkum` = @p7))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idsestavy" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hrac" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="spotreba" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="obsah" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="sbercas" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vyzkum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `moznesestavy` (`hrac`, `vykon`, `spotreba`, `obsah`, `sbercas`, `vyzkum`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hrac" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="spotreba" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="obsah" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="sbercas" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vyzkum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `idsestavy`, `hrac`, `vykon`, `spotreba`, `obsah`, `sbercas`, `vyzkum` FROM `moznesestavy`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `moznesestavy` SET `hrac` = @p1, `vykon` = @p2, `spotreba` = @p3, `obsah` = @p4, `sbercas` = @p5, `vyzkum` = @p6 WHERE ((`idsestavy` = @p7) AND (`hrac` = @p8) AND (`vykon` = @p9) AND (`spotreba` = @p10) AND (`obsah` = @p11) AND (`sbercas` = @p12) AND (`vyzkum` = @p13))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hrac" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="spotreba" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="obsah" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="sbercas" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vyzkum" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="idsestavy" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="hrac" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vykon" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="spotreba" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="obsah" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="sbercas" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="vyzkum" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="idsestavy" DataSetColumn="idsestavy" />
-              <Mapping SourceColumn="hrac" DataSetColumn="hrac" />
-              <Mapping SourceColumn="vykon" DataSetColumn="vykon" />
-              <Mapping SourceColumn="spotreba" DataSetColumn="spotreba" />
-              <Mapping SourceColumn="obsah" DataSetColumn="obsah" />
-              <Mapping SourceColumn="sbercas" DataSetColumn="sbercas" />
-              <Mapping SourceColumn="vyzkum" DataSetColumn="vyzkum" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="hardware_pcbsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hardware_pcbsDataSet" msprop:Generator_UserDSName="hardware_pcbsDataSet">
+  <xs:element name="trhDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="trhDataSet" msprop:Generator_UserDSName="trhDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="hraci" msprop:Generator_TableClassName="hraciDataTable" msprop:Generator_TableVarName="tablehraci" msprop:Generator_TablePropName="hraci" msprop:Generator_RowDeletingName="hraciRowDeleting" msprop:Generator_RowChangingName="hraciRowChanging" msprop:Generator_RowEvHandlerName="hraciRowChangeEventHandler" msprop:Generator_RowDeletedName="hraciRowDeleted" msprop:Generator_UserTableName="hraci" msprop:Generator_RowChangedName="hraciRowChanged" msprop:Generator_RowEvArgName="hraciRowChangeEvent" msprop:Generator_RowClassName="hraciRow">
@@ -925,6 +922,21 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mozne_sestavy" msprop:Generator_TableClassName="mozne_sestavyDataTable" msprop:Generator_TableVarName="tablemozne_sestavy" msprop:Generator_TablePropName="mozne_sestavy" msprop:Generator_RowDeletingName="mozne_sestavyRowDeleting" msprop:Generator_RowChangingName="mozne_sestavyRowChanging" msprop:Generator_RowEvHandlerName="mozne_sestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="mozne_sestavyRowDeleted" msprop:Generator_UserTableName="mozne_sestavy" msprop:Generator_RowChangedName="mozne_sestavyRowChanged" msprop:Generator_RowEvArgName="mozne_sestavyRowChangeEvent" msprop:Generator_RowClassName="mozne_sestavyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
+              <xs:element name="komponenty" msprop:Generator_ColumnVarNameInTable="columnkomponenty" msprop:Generator_ColumnPropNameInRow="komponenty" msprop:Generator_ColumnPropNameInTable="komponentyColumn" msprop:Generator_UserColumnName="komponenty">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -1071,6 +1083,138 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_UserTableName="CPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_RowEvArgName="CPURowChangeEvent" msprop:Generator_RowClassName="CPURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
+              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
+              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
+              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_UserTableName="GPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_RowEvArgName="GPURowChangeEvent" msprop:Generator_RowClassName="GPURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
+              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
+              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
+              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="HDD" msprop:Generator_TableClassName="HDDDataTable" msprop:Generator_TableVarName="tableHDD" msprop:Generator_TablePropName="HDD" msprop:Generator_RowDeletingName="HDDRowDeleting" msprop:Generator_RowChangingName="HDDRowChanging" msprop:Generator_RowEvHandlerName="HDDRowChangeEventHandler" msprop:Generator_RowDeletedName="HDDRowDeleted" msprop:Generator_UserTableName="HDD" msprop:Generator_RowChangedName="HDDRowChanged" msprop:Generator_RowEvArgName="HDDRowChangeEvent" msprop:Generator_RowClassName="HDDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
+              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
+              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
+              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="HraciByVykonSestav" msprop:Generator_TableClassName="HraciByVykonSestavDataTable" msprop:Generator_TableVarName="tableHraciByVykonSestav" msprop:Generator_TablePropName="HraciByVykonSestav" msprop:Generator_RowDeletingName="HraciByVykonSestavRowDeleting" msprop:Generator_RowChangingName="HraciByVykonSestavRowChanging" msprop:Generator_RowEvHandlerName="HraciByVykonSestavRowChangeEventHandler" msprop:Generator_RowDeletedName="HraciByVykonSestavRowDeleted" msprop:Generator_UserTableName="HraciByVykonSestav" msprop:Generator_RowChangedName="HraciByVykonSestavRowChanged" msprop:Generator_RowEvArgName="HraciByVykonSestavRowChangeEvent" msprop:Generator_RowClassName="HraciByVykonSestavRow">
           <xs:complexType>
             <xs:sequence>
@@ -1099,6 +1243,50 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="MB" msprop:Generator_TableClassName="MBDataTable" msprop:Generator_TableVarName="tableMB" msprop:Generator_TablePropName="MB" msprop:Generator_RowDeletingName="MBRowDeleting" msprop:Generator_RowChangingName="MBRowChanging" msprop:Generator_RowEvHandlerName="MBRowChangeEventHandler" msprop:Generator_RowDeletedName="MBRowDeleted" msprop:Generator_UserTableName="MB" msprop:Generator_RowChangedName="MBRowChanged" msprop:Generator_RowEvArgName="MBRowChangeEvent" msprop:Generator_RowClassName="MBRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
+              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
+              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
+              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="Najponukanajsie" msprop:Generator_TableClassName="NajponukanajsieDataTable" msprop:Generator_TableVarName="tableNajponukanajsie" msprop:Generator_TablePropName="Najponukanajsie" msprop:Generator_RowDeletingName="NajponukanajsieRowDeleting" msprop:Generator_RowChangingName="NajponukanajsieRowChanging" msprop:Generator_RowEvHandlerName="NajponukanajsieRowChangeEventHandler" msprop:Generator_RowDeletedName="NajponukanajsieRowDeleted" msprop:Generator_UserTableName="Najponukanajsie" msprop:Generator_RowChangedName="NajponukanajsieRowChanged" msprop:Generator_RowEvArgName="NajponukanajsieRowChangeEvent" msprop:Generator_RowClassName="NajponukanajsieRow">
           <xs:complexType>
             <xs:sequence>
@@ -1110,6 +1298,34 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Pocet" msprop:Generator_ColumnVarNameInTable="columnPocet" msprop:Generator_ColumnPropNameInRow="Pocet" msprop:Generator_ColumnPropNameInTable="PocetColumn" msprop:Generator_UserColumnName="Pocet" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NajZostava" msprop:Generator_TableClassName="NajZostavaDataTable" msprop:Generator_TableVarName="tableNajZostava" msprop:Generator_TablePropName="NajZostava" msprop:Generator_RowDeletingName="NajZostavaRowDeleting" msprop:Generator_RowChangingName="NajZostavaRowChanging" msprop:Generator_RowEvHandlerName="NajZostavaRowChangeEventHandler" msprop:Generator_RowDeletedName="NajZostavaRowDeleted" msprop:Generator_UserTableName="NajZostava" msprop:Generator_RowChangedName="NajZostavaRowChanged" msprop:Generator_RowEvArgName="NajZostavaRowChangeEvent" msprop:Generator_RowClassName="NajZostavaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAX_x0028__x0060_vykon_x0060__x0029_" msprop:Generator_ColumnVarNameInTable="_columnMAX__vykon__" msprop:Generator_ColumnPropNameInRow="_MAX__vykon__" msprop:Generator_ColumnPropNameInTable="_MAX__vykon__Column" msprop:Generator_UserColumnName="MAX(`vykon`)" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PocetKuponu" msprop:Generator_TableClassName="PocetKuponuDataTable" msprop:Generator_TableVarName="tablePocetKuponu" msprop:Generator_TablePropName="PocetKuponu" msprop:Generator_RowDeletingName="PocetKuponuRowDeleting" msprop:Generator_RowChangingName="PocetKuponuRowChanging" msprop:Generator_RowEvHandlerName="PocetKuponuRowChangeEventHandler" msprop:Generator_RowDeletedName="PocetKuponuRowDeleted" msprop:Generator_UserTableName="PocetKuponu" msprop:Generator_RowChangedName="PocetKuponuRowChanged" msprop:Generator_RowEvArgName="PocetKuponuRowChangeEvent" msprop:Generator_RowClassName="PocetKuponuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kupony" msprop:Generator_ColumnVarNameInTable="columnkupony" msprop:Generator_ColumnPropNameInRow="kupony" msprop:Generator_ColumnPropNameInTable="kuponyColumn" msprop:Generator_UserColumnName="kupony" type="xs:long" />
+              <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1143,7 +1359,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_RowClassName="CPURow" msprop:Generator_UserTableName="CPU" msprop:Generator_RowEvArgName="CPURowChangeEvent">
+        <xs:element name="PSU" msprop:Generator_TableClassName="PSUDataTable" msprop:Generator_TableVarName="tablePSU" msprop:Generator_TablePropName="PSU" msprop:Generator_RowDeletingName="PSURowDeleting" msprop:Generator_RowChangingName="PSURowChanging" msprop:Generator_RowEvHandlerName="PSURowChangeEventHandler" msprop:Generator_RowDeletedName="PSURowDeleted" msprop:Generator_UserTableName="PSU" msprop:Generator_RowChangedName="PSURowChanged" msprop:Generator_RowEvArgName="PSURowChangeEvent" msprop:Generator_RowClassName="PSURow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1187,7 +1403,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_RowClassName="GPURow" msprop:Generator_UserTableName="GPU" msprop:Generator_RowEvArgName="GPURowChangeEvent">
+        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_UserTableName="RAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_RowEvArgName="RAMRowChangeEvent" msprop:Generator_RowClassName="RAMRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1231,197 +1447,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HDD" msprop:Generator_TableClassName="HDDDataTable" msprop:Generator_TableVarName="tableHDD" msprop:Generator_RowChangedName="HDDRowChanged" msprop:Generator_TablePropName="HDD" msprop:Generator_RowDeletingName="HDDRowDeleting" msprop:Generator_RowChangingName="HDDRowChanging" msprop:Generator_RowEvHandlerName="HDDRowChangeEventHandler" msprop:Generator_RowDeletedName="HDDRowDeleted" msprop:Generator_RowClassName="HDDRow" msprop:Generator_UserTableName="HDD" msprop:Generator_RowEvArgName="HDDRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
-              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="16" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
-              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
-              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="MB" msprop:Generator_TableClassName="MBDataTable" msprop:Generator_TableVarName="tableMB" msprop:Generator_RowChangedName="MBRowChanged" msprop:Generator_TablePropName="MB" msprop:Generator_RowDeletingName="MBRowDeleting" msprop:Generator_RowChangingName="MBRowChanging" msprop:Generator_RowEvHandlerName="MBRowChangeEventHandler" msprop:Generator_RowDeletedName="MBRowDeleted" msprop:Generator_RowClassName="MBRow" msprop:Generator_UserTableName="MB" msprop:Generator_RowEvArgName="MBRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
-              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="16" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
-              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
-              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PocetKuponu" msprop:Generator_TableClassName="PocetKuponuDataTable" msprop:Generator_TableVarName="tablePocetKuponu" msprop:Generator_RowChangedName="PocetKuponuRowChanged" msprop:Generator_TablePropName="PocetKuponu" msprop:Generator_RowDeletingName="PocetKuponuRowDeleting" msprop:Generator_RowChangingName="PocetKuponuRowChanging" msprop:Generator_RowEvHandlerName="PocetKuponuRowChangeEventHandler" msprop:Generator_RowDeletedName="PocetKuponuRowDeleted" msprop:Generator_RowClassName="PocetKuponuRow" msprop:Generator_UserTableName="PocetKuponu" msprop:Generator_RowEvArgName="PocetKuponuRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="kupony" msprop:Generator_ColumnVarNameInTable="columnkupony" msprop:Generator_ColumnPropNameInRow="kupony" msprop:Generator_ColumnPropNameInTable="kuponyColumn" msprop:Generator_UserColumnName="kupony" type="xs:long" />
-              <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PSU" msprop:Generator_TableClassName="PSUDataTable" msprop:Generator_TableVarName="tablePSU" msprop:Generator_RowChangedName="PSURowChanged" msprop:Generator_TablePropName="PSU" msprop:Generator_RowDeletingName="PSURowDeleting" msprop:Generator_RowChangingName="PSURowChanging" msprop:Generator_RowEvHandlerName="PSURowChangeEventHandler" msprop:Generator_RowDeletedName="PSURowDeleted" msprop:Generator_RowClassName="PSURow" msprop:Generator_UserTableName="PSU" msprop:Generator_RowEvArgName="PSURowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
-              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="16" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
-              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
-              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_RowClassName="RAMRow" msprop:Generator_UserTableName="RAM" msprop:Generator_RowEvArgName="RAMRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
-              <xs:element name="nazev" msprop:Generator_ColumnVarNameInTable="columnnazev" msprop:Generator_ColumnPropNameInRow="nazev" msprop:Generator_ColumnPropNameInTable="nazevColumn" msprop:Generator_UserColumnName="nazev">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="typ" msprop:Generator_ColumnVarNameInTable="columntyp" msprop:Generator_ColumnPropNameInRow="typ" msprop:Generator_ColumnPropNameInTable="typColumn" msprop:Generator_UserColumnName="typ">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="16" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
-              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
-              <xs:element name="socket" msprop:Generator_ColumnVarNameInTable="columnsocket" msprop:Generator_ColumnPropNameInRow="socket" msprop:Generator_ColumnPropNameInTable="socketColumn" msprop:Generator_UserColumnName="socket">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sloty" msprop:Generator_ColumnVarNameInTable="columnsloty" msprop:Generator_ColumnPropNameInRow="sloty" msprop:Generator_ColumnPropNameInTable="slotyColumn" msprop:Generator_UserColumnName="sloty">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="popis" msprop:Generator_ColumnVarNameInTable="columnpopis" msprop:Generator_ColumnPropNameInRow="popis" msprop:Generator_ColumnPropNameInTable="popisColumn" msprop:Generator_UserColumnName="popis">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Vykon_vs_Kupony" msprop:Generator_TableClassName="Vykon_vs_KuponyDataTable" msprop:Generator_TableVarName="tableVykon_vs_Kupony" msprop:Generator_RowChangedName="Vykon_vs_KuponyRowChanged" msprop:Generator_TablePropName="Vykon_vs_Kupony" msprop:Generator_RowDeletingName="Vykon_vs_KuponyRowDeleting" msprop:Generator_RowChangingName="Vykon_vs_KuponyRowChanging" msprop:Generator_RowEvHandlerName="Vykon_vs_KuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="Vykon_vs_KuponyRowDeleted" msprop:Generator_RowClassName="Vykon_vs_KuponyRow" msprop:Generator_UserTableName="Vykon_vs_Kupony" msprop:Generator_RowEvArgName="Vykon_vs_KuponyRowChangeEvent">
+        <xs:element name="Vykon_vs_Kupony" msprop:Generator_TableClassName="Vykon_vs_KuponyDataTable" msprop:Generator_TableVarName="tableVykon_vs_Kupony" msprop:Generator_TablePropName="Vykon_vs_Kupony" msprop:Generator_RowDeletingName="Vykon_vs_KuponyRowDeleting" msprop:Generator_RowChangingName="Vykon_vs_KuponyRowChanging" msprop:Generator_RowEvHandlerName="Vykon_vs_KuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="Vykon_vs_KuponyRowDeleted" msprop:Generator_UserTableName="Vykon_vs_Kupony" msprop:Generator_RowChangedName="Vykon_vs_KuponyRowChanged" msprop:Generator_RowEvArgName="Vykon_vs_KuponyRowChangeEvent" msprop:Generator_RowClassName="Vykon_vs_KuponyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
@@ -1436,25 +1462,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="moznesestavy" msprop:Generator_TableClassName="moznesestavyDataTable" msprop:Generator_TableVarName="tablemoznesestavy" msprop:Generator_TablePropName="moznesestavy" msprop:Generator_RowDeletingName="moznesestavyRowDeleting" msprop:Generator_RowChangingName="moznesestavyRowChanging" msprop:Generator_RowEvHandlerName="moznesestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="moznesestavyRowDeleted" msprop:Generator_UserTableName="moznesestavy" msprop:Generator_RowChangedName="moznesestavyRowChanged" msprop:Generator_RowEvArgName="moznesestavyRowChangeEvent" msprop:Generator_RowClassName="moznesestavyRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idsestavy" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidsestavy" msprop:Generator_ColumnPropNameInRow="idsestavy" msprop:Generator_ColumnPropNameInTable="idsestavyColumn" msprop:Generator_UserColumnName="idsestavy" type="xs:int" />
-              <xs:element name="hrac" msprop:Generator_ColumnVarNameInTable="columnhrac" msprop:Generator_ColumnPropNameInRow="hrac" msprop:Generator_ColumnPropNameInTable="hracColumn" msprop:Generator_UserColumnName="hrac" type="xs:int" />
-              <xs:element name="vykon" msprop:Generator_ColumnVarNameInTable="columnvykon" msprop:Generator_ColumnPropNameInRow="vykon" msprop:Generator_ColumnPropNameInTable="vykonColumn" msprop:Generator_UserColumnName="vykon" type="xs:int" />
-              <xs:element name="spotreba" msprop:Generator_ColumnVarNameInTable="columnspotreba" msprop:Generator_ColumnPropNameInRow="spotreba" msprop:Generator_ColumnPropNameInTable="spotrebaColumn" msprop:Generator_UserColumnName="spotreba" type="xs:int" />
-              <xs:element name="obsah" msprop:Generator_ColumnVarNameInTable="columnobsah" msprop:Generator_ColumnPropNameInRow="obsah" msprop:Generator_ColumnPropNameInTable="obsahColumn" msprop:Generator_UserColumnName="obsah">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="sbercas" msprop:Generator_ColumnVarNameInTable="columnsbercas" msprop:Generator_ColumnPropNameInRow="sbercas" msprop:Generator_ColumnPropNameInTable="sbercasColumn" msprop:Generator_UserColumnName="sbercas" type="xs:int" />
-              <xs:element name="vyzkum" msprop:Generator_ColumnVarNameInTable="columnvyzkum" msprop:Generator_ColumnPropNameInRow="vyzkum" msprop:Generator_ColumnPropNameInTable="vyzkumColumn" msprop:Generator_UserColumnName="vyzkum" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1464,6 +1471,10 @@
     <xs:unique name="kupony_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:kupony" />
       <xs:field xpath="mstns:kod" />
+    </xs:unique>
+    <xs:unique name="mozne_sestavy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:mozne_sestavy" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
     <xs:unique name="obchod_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:obchod" />
@@ -1489,10 +1500,6 @@
       <xs:selector xpath=".//mstns:vyzkumy" />
       <xs:field xpath="mstns:idvyzkumu" />
     </xs:unique>
-    <xs:unique name="Prehled_x0020_trhu_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Prehled_x0020_trhu" />
-      <xs:field xpath="mstns:idnab" />
-    </xs:unique>
     <xs:unique name="CPU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CPU" />
       <xs:field xpath="mstns:idveci" />
@@ -1509,6 +1516,10 @@
       <xs:selector xpath=".//mstns:MB" />
       <xs:field xpath="mstns:idveci" />
     </xs:unique>
+    <xs:unique name="Prehled_x0020_trhu_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Prehled_x0020_trhu" />
+      <xs:field xpath="mstns:idnab" />
+    </xs:unique>
     <xs:unique name="PSU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:PSU" />
       <xs:field xpath="mstns:idveci" />
@@ -1516,10 +1527,6 @@
     <xs:unique name="RAM_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:RAM" />
       <xs:field xpath="mstns:idveci" />
-    </xs:unique>
-    <xs:unique name="moznesestavy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:moznesestavy" />
-      <xs:field xpath="mstns:idsestavy" />
     </xs:unique>
   </xs:element>
 </xs:schema>

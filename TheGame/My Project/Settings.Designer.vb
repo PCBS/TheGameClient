@@ -64,6 +64,16 @@ Namespace My
                 Return CType(Me("hardware_pcbsConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=192.168.1.1;user id=VS;persistsecurityinfo=True;database=trh")>  _
+        Public ReadOnly Property trhConnectionString() As String
+            Get
+                Return CType(Me("trhConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

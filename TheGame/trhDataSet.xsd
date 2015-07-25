@@ -461,7 +461,17 @@
               <Mapping SourceColumn="sloty" DataSetColumn="sloty" />
               <Mapping SourceColumn="popis" DataSetColumn="popis" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.veci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        *
+FROM            veci</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vyrobaTableAdapter" GeneratorDataComponentClassName="vyrobaTableAdapter" Name="vyroba" UserDataComponentName="vyrobaTableAdapter">
             <MainSource>
@@ -576,7 +586,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Aktivita_vs_vykonTableAdapter" GeneratorDataComponentClassName="Aktivita_vs_vykonTableAdapter" Name="Aktivita_vs_vykon" UserDataComponentName="Aktivita_vs_vykonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.Aktivita_vs_vykon" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `jmeno`, `aktivita`, `sum(s.vykon)` FROM `trh`.`Aktivita_vs_vykon`</CommandText>
@@ -594,7 +604,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CPUTableAdapter" GeneratorDataComponentClassName="CPUTableAdapter" Name="CPU" UserDataComponentName="CPUTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.CPU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`CPU`</CommandText>
@@ -617,7 +627,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GPUTableAdapter" GeneratorDataComponentClassName="GPUTableAdapter" Name="GPU" UserDataComponentName="GPUTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.GPU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`GPU`</CommandText>
@@ -640,7 +650,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HDDTableAdapter" GeneratorDataComponentClassName="HDDTableAdapter" Name="HDD" UserDataComponentName="HDDTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.HDD" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`HDD`</CommandText>
@@ -663,7 +673,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HraciByVykonSestavTableAdapter" GeneratorDataComponentClassName="HraciByVykonSestavTableAdapter" Name="HraciByVykonSestav" UserDataComponentName="HraciByVykonSestavTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.HraciByVykonSestav" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `jmeno`, `sum(s.vykon)` FROM `trh`.`HraciByVykonSestav`</CommandText>
@@ -680,7 +690,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LogAktivitaTableAdapter" GeneratorDataComponentClassName="LogAktivitaTableAdapter" Name="LogAktivita" UserDataComponentName="LogAktivitaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.LogAktivita" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `Aktivita`, `jmeno` FROM `trh`.`LogAktivita`</CommandText>
@@ -697,7 +707,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MBTableAdapter" GeneratorDataComponentClassName="MBTableAdapter" Name="MB" UserDataComponentName="MBTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.MB" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`MB`</CommandText>
@@ -720,7 +730,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NajponukanajsieTableAdapter" GeneratorDataComponentClassName="NajponukanajsieTableAdapter" Name="Najponukanajsie" UserDataComponentName="NajponukanajsieTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.Najponukanajsie" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `Vec`, `Pocet` FROM `trh`.`Najponukanajsie`</CommandText>
@@ -737,7 +747,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NajZostavaTableAdapter" GeneratorDataComponentClassName="NajZostavaTableAdapter" Name="NajZostava" UserDataComponentName="NajZostavaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.NajZostava" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `jmeno`, `MAX(``vykon``)` FROM `trh`.`NajZostava`</CommandText>
@@ -754,7 +764,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PocetKuponuTableAdapter" GeneratorDataComponentClassName="PocetKuponuTableAdapter" Name="PocetKuponu" UserDataComponentName="PocetKuponuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.PocetKuponu" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `kupony`, `jmeno` FROM `trh`.`PocetKuponu`</CommandText>
@@ -771,7 +781,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Prehled trhuTableAdapter" GeneratorDataComponentClassName="Prehled_trhuTableAdapter" Name="Prehled trhu" UserDataComponentName="Prehled trhuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.`Prehled trhu`" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idnab`, `jmeno`, `nazevNabizi`, `mnoznabizi`, `nazevChce`, `mnozchce` FROM `trh`.`Prehled trhu`</CommandText>
@@ -792,7 +802,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PSUTableAdapter" GeneratorDataComponentClassName="PSUTableAdapter" Name="PSU" UserDataComponentName="PSUTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.PSU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`PSU`</CommandText>
@@ -815,7 +825,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RAMTableAdapter" GeneratorDataComponentClassName="RAMTableAdapter" Name="RAM" UserDataComponentName="RAMTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.RAM" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `idveci`, `nazev`, `typ`, `vykon`, `spotreba`, `socket`, `sloty`, `popis` FROM `trh`.`RAM`</CommandText>
@@ -838,7 +848,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vykon_vs_KuponyTableAdapter" GeneratorDataComponentClassName="Vykon_vs_KuponyTableAdapter" Name="Vykon_vs_Kupony" UserDataComponentName="Vykon_vs_KuponyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="trhConnectionString (MySettings)" DbObjectName="trh.Vykon_vs_Kupony" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT `jmeno`, `vykon`, `kupony` FROM `trh`.`Vykon_vs_Kupony`</CommandText>
@@ -862,7 +872,7 @@
   <xs:element name="trhDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="trhDataSet" msprop:Generator_UserDSName="trhDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="hraci" msprop:Generator_TableClassName="hraciDataTable" msprop:Generator_TableVarName="tablehraci" msprop:Generator_TablePropName="hraci" msprop:Generator_RowDeletingName="hraciRowDeleting" msprop:Generator_RowChangingName="hraciRowChanging" msprop:Generator_RowEvHandlerName="hraciRowChangeEventHandler" msprop:Generator_RowDeletedName="hraciRowDeleted" msprop:Generator_UserTableName="hraci" msprop:Generator_RowChangedName="hraciRowChanged" msprop:Generator_RowEvArgName="hraciRowChangeEvent" msprop:Generator_RowClassName="hraciRow">
+        <xs:element name="hraci" msprop:Generator_TableClassName="hraciDataTable" msprop:Generator_TableVarName="tablehraci" msprop:Generator_RowChangedName="hraciRowChanged" msprop:Generator_TablePropName="hraci" msprop:Generator_RowDeletingName="hraciRowDeleting" msprop:Generator_RowChangingName="hraciRowChanging" msprop:Generator_RowEvHandlerName="hraciRowChangeEventHandler" msprop:Generator_RowDeletedName="hraciRowDeleted" msprop:Generator_RowClassName="hraciRow" msprop:Generator_UserTableName="hraci" msprop:Generator_RowEvArgName="hraciRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idhrace" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidhrace" msprop:Generator_ColumnPropNameInRow="idhrace" msprop:Generator_ColumnPropNameInTable="idhraceColumn" msprop:Generator_UserColumnName="idhrace" type="xs:int" />
@@ -892,7 +902,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="kupony" msprop:Generator_TableClassName="kuponyDataTable" msprop:Generator_TableVarName="tablekupony" msprop:Generator_TablePropName="kupony" msprop:Generator_RowDeletingName="kuponyRowDeleting" msprop:Generator_RowChangingName="kuponyRowChanging" msprop:Generator_RowEvHandlerName="kuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="kuponyRowDeleted" msprop:Generator_UserTableName="kupony" msprop:Generator_RowChangedName="kuponyRowChanged" msprop:Generator_RowEvArgName="kuponyRowChangeEvent" msprop:Generator_RowClassName="kuponyRow">
+        <xs:element name="kupony" msprop:Generator_TableClassName="kuponyDataTable" msprop:Generator_TableVarName="tablekupony" msprop:Generator_RowChangedName="kuponyRowChanged" msprop:Generator_TablePropName="kupony" msprop:Generator_RowDeletingName="kuponyRowDeleting" msprop:Generator_RowChangingName="kuponyRowChanging" msprop:Generator_RowEvHandlerName="kuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="kuponyRowDeleted" msprop:Generator_RowClassName="kuponyRow" msprop:Generator_UserTableName="kupony" msprop:Generator_RowEvArgName="kuponyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="kod" msprop:Generator_ColumnVarNameInTable="columnkod" msprop:Generator_ColumnPropNameInRow="kod" msprop:Generator_ColumnPropNameInTable="kodColumn" msprop:Generator_UserColumnName="kod">
@@ -913,7 +923,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log" msprop:Generator_TableClassName="logDataTable" msprop:Generator_TableVarName="tablelog" msprop:Generator_TablePropName="log" msprop:Generator_RowDeletingName="logRowDeleting" msprop:Generator_RowChangingName="logRowChanging" msprop:Generator_RowEvHandlerName="logRowChangeEventHandler" msprop:Generator_RowDeletedName="logRowDeleted" msprop:Generator_UserTableName="log" msprop:Generator_RowChangedName="logRowChanged" msprop:Generator_RowEvArgName="logRowChangeEvent" msprop:Generator_RowClassName="logRow">
+        <xs:element name="log" msprop:Generator_TableClassName="logDataTable" msprop:Generator_TableVarName="tablelog" msprop:Generator_RowChangedName="logRowChanged" msprop:Generator_TablePropName="log" msprop:Generator_RowDeletingName="logRowDeleting" msprop:Generator_RowChangingName="logRowChanging" msprop:Generator_RowEvHandlerName="logRowChangeEventHandler" msprop:Generator_RowDeletedName="logRowDeleted" msprop:Generator_RowClassName="logRow" msprop:Generator_UserTableName="log" msprop:Generator_RowEvArgName="logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cas" msprop:Generator_ColumnVarNameInTable="columncas" msprop:Generator_ColumnPropNameInRow="cas" msprop:Generator_ColumnPropNameInTable="casColumn" msprop:Generator_UserColumnName="cas" type="xs:int" />
@@ -928,7 +938,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="mozne_sestavy" msprop:Generator_TableClassName="mozne_sestavyDataTable" msprop:Generator_TableVarName="tablemozne_sestavy" msprop:Generator_TablePropName="mozne_sestavy" msprop:Generator_RowDeletingName="mozne_sestavyRowDeleting" msprop:Generator_RowChangingName="mozne_sestavyRowChanging" msprop:Generator_RowEvHandlerName="mozne_sestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="mozne_sestavyRowDeleted" msprop:Generator_UserTableName="mozne_sestavy" msprop:Generator_RowChangedName="mozne_sestavyRowChanged" msprop:Generator_RowEvArgName="mozne_sestavyRowChangeEvent" msprop:Generator_RowClassName="mozne_sestavyRow">
+        <xs:element name="mozne_sestavy" msprop:Generator_TableClassName="mozne_sestavyDataTable" msprop:Generator_TableVarName="tablemozne_sestavy" msprop:Generator_RowChangedName="mozne_sestavyRowChanged" msprop:Generator_TablePropName="mozne_sestavy" msprop:Generator_RowDeletingName="mozne_sestavyRowDeleting" msprop:Generator_RowChangingName="mozne_sestavyRowChanging" msprop:Generator_RowEvHandlerName="mozne_sestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="mozne_sestavyRowDeleted" msprop:Generator_RowClassName="mozne_sestavyRow" msprop:Generator_UserTableName="mozne_sestavy" msprop:Generator_RowEvArgName="mozne_sestavyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -943,7 +953,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="obchod" msprop:Generator_TableClassName="obchodDataTable" msprop:Generator_TableVarName="tableobchod" msprop:Generator_TablePropName="obchod" msprop:Generator_RowDeletingName="obchodRowDeleting" msprop:Generator_RowChangingName="obchodRowChanging" msprop:Generator_RowEvHandlerName="obchodRowChangeEventHandler" msprop:Generator_RowDeletedName="obchodRowDeleted" msprop:Generator_UserTableName="obchod" msprop:Generator_RowChangedName="obchodRowChanged" msprop:Generator_RowEvArgName="obchodRowChangeEvent" msprop:Generator_RowClassName="obchodRow">
+        <xs:element name="obchod" msprop:Generator_TableClassName="obchodDataTable" msprop:Generator_TableVarName="tableobchod" msprop:Generator_RowChangedName="obchodRowChanged" msprop:Generator_TablePropName="obchod" msprop:Generator_RowDeletingName="obchodRowDeleting" msprop:Generator_RowChangingName="obchodRowChanging" msprop:Generator_RowEvHandlerName="obchodRowChangeEventHandler" msprop:Generator_RowDeletedName="obchodRowDeleted" msprop:Generator_RowClassName="obchodRow" msprop:Generator_UserTableName="obchod" msprop:Generator_RowEvArgName="obchodRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idnab" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidnab" msprop:Generator_ColumnPropNameInRow="idnab" msprop:Generator_ColumnPropNameInTable="idnabColumn" msprop:Generator_UserColumnName="idnab" type="xs:int" />
@@ -955,7 +965,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="recepty" msprop:Generator_TableClassName="receptyDataTable" msprop:Generator_TableVarName="tablerecepty" msprop:Generator_TablePropName="recepty" msprop:Generator_RowDeletingName="receptyRowDeleting" msprop:Generator_RowChangingName="receptyRowChanging" msprop:Generator_RowEvHandlerName="receptyRowChangeEventHandler" msprop:Generator_RowDeletedName="receptyRowDeleted" msprop:Generator_UserTableName="recepty" msprop:Generator_RowChangedName="receptyRowChanged" msprop:Generator_RowEvArgName="receptyRowChangeEvent" msprop:Generator_RowClassName="receptyRow">
+        <xs:element name="recepty" msprop:Generator_TableClassName="receptyDataTable" msprop:Generator_TableVarName="tablerecepty" msprop:Generator_RowChangedName="receptyRowChanged" msprop:Generator_TablePropName="recepty" msprop:Generator_RowDeletingName="receptyRowDeleting" msprop:Generator_RowChangingName="receptyRowChanging" msprop:Generator_RowEvHandlerName="receptyRowChangeEventHandler" msprop:Generator_RowDeletedName="receptyRowDeleted" msprop:Generator_RowClassName="receptyRow" msprop:Generator_UserTableName="recepty" msprop:Generator_RowEvArgName="receptyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idreceptu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidreceptu" msprop:Generator_ColumnPropNameInRow="idreceptu" msprop:Generator_ColumnPropNameInTable="idreceptuColumn" msprop:Generator_UserColumnName="idreceptu" type="xs:int" />
@@ -972,7 +982,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sestavy" msprop:Generator_TableClassName="sestavyDataTable" msprop:Generator_TableVarName="tablesestavy" msprop:Generator_TablePropName="sestavy" msprop:Generator_RowDeletingName="sestavyRowDeleting" msprop:Generator_RowChangingName="sestavyRowChanging" msprop:Generator_RowEvHandlerName="sestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="sestavyRowDeleted" msprop:Generator_UserTableName="sestavy" msprop:Generator_RowChangedName="sestavyRowChanged" msprop:Generator_RowEvArgName="sestavyRowChangeEvent" msprop:Generator_RowClassName="sestavyRow">
+        <xs:element name="sestavy" msprop:Generator_TableClassName="sestavyDataTable" msprop:Generator_TableVarName="tablesestavy" msprop:Generator_RowChangedName="sestavyRowChanged" msprop:Generator_TablePropName="sestavy" msprop:Generator_RowDeletingName="sestavyRowDeleting" msprop:Generator_RowChangingName="sestavyRowChanging" msprop:Generator_RowEvHandlerName="sestavyRowChangeEventHandler" msprop:Generator_RowDeletedName="sestavyRowDeleted" msprop:Generator_RowClassName="sestavyRow" msprop:Generator_UserTableName="sestavy" msprop:Generator_RowEvArgName="sestavyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idsestavy" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidsestavy" msprop:Generator_ColumnPropNameInRow="idsestavy" msprop:Generator_ColumnPropNameInTable="idsestavyColumn" msprop:Generator_UserColumnName="idsestavy" type="xs:int" />
@@ -991,7 +1001,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="veci" msprop:Generator_TableClassName="veciDataTable" msprop:Generator_TableVarName="tableveci" msprop:Generator_TablePropName="veci" msprop:Generator_RowDeletingName="veciRowDeleting" msprop:Generator_RowChangingName="veciRowChanging" msprop:Generator_RowEvHandlerName="veciRowChangeEventHandler" msprop:Generator_RowDeletedName="veciRowDeleted" msprop:Generator_UserTableName="veci" msprop:Generator_RowChangedName="veciRowChanged" msprop:Generator_RowEvArgName="veciRowChangeEvent" msprop:Generator_RowClassName="veciRow">
+        <xs:element name="veci" msprop:Generator_TableClassName="veciDataTable" msprop:Generator_TableVarName="tableveci" msprop:Generator_RowChangedName="veciRowChanged" msprop:Generator_TablePropName="veci" msprop:Generator_RowDeletingName="veciRowDeleting" msprop:Generator_RowChangingName="veciRowChanging" msprop:Generator_RowEvHandlerName="veciRowChangeEventHandler" msprop:Generator_RowDeletedName="veciRowDeleted" msprop:Generator_RowClassName="veciRow" msprop:Generator_UserTableName="veci" msprop:Generator_RowEvArgName="veciRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1035,7 +1045,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vyroba" msprop:Generator_TableClassName="vyrobaDataTable" msprop:Generator_TableVarName="tablevyroba" msprop:Generator_TablePropName="vyroba" msprop:Generator_RowDeletingName="vyrobaRowDeleting" msprop:Generator_RowChangingName="vyrobaRowChanging" msprop:Generator_RowEvHandlerName="vyrobaRowChangeEventHandler" msprop:Generator_RowDeletedName="vyrobaRowDeleted" msprop:Generator_UserTableName="vyroba" msprop:Generator_RowChangedName="vyrobaRowChanged" msprop:Generator_RowEvArgName="vyrobaRowChangeEvent" msprop:Generator_RowClassName="vyrobaRow">
+        <xs:element name="vyroba" msprop:Generator_TableClassName="vyrobaDataTable" msprop:Generator_TableVarName="tablevyroba" msprop:Generator_RowChangedName="vyrobaRowChanged" msprop:Generator_TablePropName="vyroba" msprop:Generator_RowDeletingName="vyrobaRowDeleting" msprop:Generator_RowChangingName="vyrobaRowChanging" msprop:Generator_RowEvHandlerName="vyrobaRowChangeEventHandler" msprop:Generator_RowDeletedName="vyrobaRowDeleted" msprop:Generator_RowClassName="vyrobaRow" msprop:Generator_UserTableName="vyroba" msprop:Generator_RowEvArgName="vyrobaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idvyroby" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidvyroby" msprop:Generator_ColumnPropNameInRow="idvyroby" msprop:Generator_ColumnPropNameInTable="idvyrobyColumn" msprop:Generator_UserColumnName="idvyroby" type="xs:int" />
@@ -1046,7 +1056,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vyzkumy" msprop:Generator_TableClassName="vyzkumyDataTable" msprop:Generator_TableVarName="tablevyzkumy" msprop:Generator_TablePropName="vyzkumy" msprop:Generator_RowDeletingName="vyzkumyRowDeleting" msprop:Generator_RowChangingName="vyzkumyRowChanging" msprop:Generator_RowEvHandlerName="vyzkumyRowChangeEventHandler" msprop:Generator_RowDeletedName="vyzkumyRowDeleted" msprop:Generator_UserTableName="vyzkumy" msprop:Generator_RowChangedName="vyzkumyRowChanged" msprop:Generator_RowEvArgName="vyzkumyRowChangeEvent" msprop:Generator_RowClassName="vyzkumyRow">
+        <xs:element name="vyzkumy" msprop:Generator_TableClassName="vyzkumyDataTable" msprop:Generator_TableVarName="tablevyzkumy" msprop:Generator_RowChangedName="vyzkumyRowChanged" msprop:Generator_TablePropName="vyzkumy" msprop:Generator_RowDeletingName="vyzkumyRowDeleting" msprop:Generator_RowChangingName="vyzkumyRowChanging" msprop:Generator_RowEvHandlerName="vyzkumyRowChangeEventHandler" msprop:Generator_RowDeletedName="vyzkumyRowDeleted" msprop:Generator_RowClassName="vyzkumyRow" msprop:Generator_UserTableName="vyzkumy" msprop:Generator_RowEvArgName="vyzkumyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idvyzkumu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidvyzkumu" msprop:Generator_ColumnPropNameInRow="idvyzkumu" msprop:Generator_ColumnPropNameInTable="idvyzkumuColumn" msprop:Generator_UserColumnName="idvyzkumu" type="xs:int" />
@@ -1068,7 +1078,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Aktivita_vs_vykon" msprop:Generator_TableClassName="Aktivita_vs_vykonDataTable" msprop:Generator_TableVarName="tableAktivita_vs_vykon" msprop:Generator_TablePropName="Aktivita_vs_vykon" msprop:Generator_RowDeletingName="Aktivita_vs_vykonRowDeleting" msprop:Generator_RowChangingName="Aktivita_vs_vykonRowChanging" msprop:Generator_RowEvHandlerName="Aktivita_vs_vykonRowChangeEventHandler" msprop:Generator_RowDeletedName="Aktivita_vs_vykonRowDeleted" msprop:Generator_UserTableName="Aktivita_vs_vykon" msprop:Generator_RowChangedName="Aktivita_vs_vykonRowChanged" msprop:Generator_RowEvArgName="Aktivita_vs_vykonRowChangeEvent" msprop:Generator_RowClassName="Aktivita_vs_vykonRow">
+        <xs:element name="Aktivita_vs_vykon" msprop:Generator_TableClassName="Aktivita_vs_vykonDataTable" msprop:Generator_TableVarName="tableAktivita_vs_vykon" msprop:Generator_RowChangedName="Aktivita_vs_vykonRowChanged" msprop:Generator_TablePropName="Aktivita_vs_vykon" msprop:Generator_RowDeletingName="Aktivita_vs_vykonRowDeleting" msprop:Generator_RowChangingName="Aktivita_vs_vykonRowChanging" msprop:Generator_RowEvHandlerName="Aktivita_vs_vykonRowChangeEventHandler" msprop:Generator_RowDeletedName="Aktivita_vs_vykonRowDeleted" msprop:Generator_RowClassName="Aktivita_vs_vykonRow" msprop:Generator_UserTableName="Aktivita_vs_vykon" msprop:Generator_RowEvArgName="Aktivita_vs_vykonRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
@@ -1083,7 +1093,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_UserTableName="CPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_RowEvArgName="CPURowChangeEvent" msprop:Generator_RowClassName="CPURow">
+        <xs:element name="CPU" msprop:Generator_TableClassName="CPUDataTable" msprop:Generator_TableVarName="tableCPU" msprop:Generator_RowChangedName="CPURowChanged" msprop:Generator_TablePropName="CPU" msprop:Generator_RowDeletingName="CPURowDeleting" msprop:Generator_RowChangingName="CPURowChanging" msprop:Generator_RowEvHandlerName="CPURowChangeEventHandler" msprop:Generator_RowDeletedName="CPURowDeleted" msprop:Generator_RowClassName="CPURow" msprop:Generator_UserTableName="CPU" msprop:Generator_RowEvArgName="CPURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1127,7 +1137,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_UserTableName="GPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_RowEvArgName="GPURowChangeEvent" msprop:Generator_RowClassName="GPURow">
+        <xs:element name="GPU" msprop:Generator_TableClassName="GPUDataTable" msprop:Generator_TableVarName="tableGPU" msprop:Generator_RowChangedName="GPURowChanged" msprop:Generator_TablePropName="GPU" msprop:Generator_RowDeletingName="GPURowDeleting" msprop:Generator_RowChangingName="GPURowChanging" msprop:Generator_RowEvHandlerName="GPURowChangeEventHandler" msprop:Generator_RowDeletedName="GPURowDeleted" msprop:Generator_RowClassName="GPURow" msprop:Generator_UserTableName="GPU" msprop:Generator_RowEvArgName="GPURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1171,7 +1181,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HDD" msprop:Generator_TableClassName="HDDDataTable" msprop:Generator_TableVarName="tableHDD" msprop:Generator_TablePropName="HDD" msprop:Generator_RowDeletingName="HDDRowDeleting" msprop:Generator_RowChangingName="HDDRowChanging" msprop:Generator_RowEvHandlerName="HDDRowChangeEventHandler" msprop:Generator_RowDeletedName="HDDRowDeleted" msprop:Generator_UserTableName="HDD" msprop:Generator_RowChangedName="HDDRowChanged" msprop:Generator_RowEvArgName="HDDRowChangeEvent" msprop:Generator_RowClassName="HDDRow">
+        <xs:element name="HDD" msprop:Generator_TableClassName="HDDDataTable" msprop:Generator_TableVarName="tableHDD" msprop:Generator_RowChangedName="HDDRowChanged" msprop:Generator_TablePropName="HDD" msprop:Generator_RowDeletingName="HDDRowDeleting" msprop:Generator_RowChangingName="HDDRowChanging" msprop:Generator_RowEvHandlerName="HDDRowChangeEventHandler" msprop:Generator_RowDeletedName="HDDRowDeleted" msprop:Generator_RowClassName="HDDRow" msprop:Generator_UserTableName="HDD" msprop:Generator_RowEvArgName="HDDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1215,7 +1225,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HraciByVykonSestav" msprop:Generator_TableClassName="HraciByVykonSestavDataTable" msprop:Generator_TableVarName="tableHraciByVykonSestav" msprop:Generator_TablePropName="HraciByVykonSestav" msprop:Generator_RowDeletingName="HraciByVykonSestavRowDeleting" msprop:Generator_RowChangingName="HraciByVykonSestavRowChanging" msprop:Generator_RowEvHandlerName="HraciByVykonSestavRowChangeEventHandler" msprop:Generator_RowDeletedName="HraciByVykonSestavRowDeleted" msprop:Generator_UserTableName="HraciByVykonSestav" msprop:Generator_RowChangedName="HraciByVykonSestavRowChanged" msprop:Generator_RowEvArgName="HraciByVykonSestavRowChangeEvent" msprop:Generator_RowClassName="HraciByVykonSestavRow">
+        <xs:element name="HraciByVykonSestav" msprop:Generator_TableClassName="HraciByVykonSestavDataTable" msprop:Generator_TableVarName="tableHraciByVykonSestav" msprop:Generator_RowChangedName="HraciByVykonSestavRowChanged" msprop:Generator_TablePropName="HraciByVykonSestav" msprop:Generator_RowDeletingName="HraciByVykonSestavRowDeleting" msprop:Generator_RowChangingName="HraciByVykonSestavRowChanging" msprop:Generator_RowEvHandlerName="HraciByVykonSestavRowChangeEventHandler" msprop:Generator_RowDeletedName="HraciByVykonSestavRowDeleted" msprop:Generator_RowClassName="HraciByVykonSestavRow" msprop:Generator_UserTableName="HraciByVykonSestav" msprop:Generator_RowEvArgName="HraciByVykonSestavRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
@@ -1229,7 +1239,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LogAktivita" msprop:Generator_TableClassName="LogAktivitaDataTable" msprop:Generator_TableVarName="tableLogAktivita" msprop:Generator_TablePropName="LogAktivita" msprop:Generator_RowDeletingName="LogAktivitaRowDeleting" msprop:Generator_RowChangingName="LogAktivitaRowChanging" msprop:Generator_RowEvHandlerName="LogAktivitaRowChangeEventHandler" msprop:Generator_RowDeletedName="LogAktivitaRowDeleted" msprop:Generator_UserTableName="LogAktivita" msprop:Generator_RowChangedName="LogAktivitaRowChanged" msprop:Generator_RowEvArgName="LogAktivitaRowChangeEvent" msprop:Generator_RowClassName="LogAktivitaRow">
+        <xs:element name="LogAktivita" msprop:Generator_TableClassName="LogAktivitaDataTable" msprop:Generator_TableVarName="tableLogAktivita" msprop:Generator_RowChangedName="LogAktivitaRowChanged" msprop:Generator_TablePropName="LogAktivita" msprop:Generator_RowDeletingName="LogAktivitaRowDeleting" msprop:Generator_RowChangingName="LogAktivitaRowChanging" msprop:Generator_RowEvHandlerName="LogAktivitaRowChangeEventHandler" msprop:Generator_RowDeletedName="LogAktivitaRowDeleted" msprop:Generator_RowClassName="LogAktivitaRow" msprop:Generator_UserTableName="LogAktivita" msprop:Generator_RowEvArgName="LogAktivitaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Aktivita" msprop:Generator_ColumnVarNameInTable="columnAktivita" msprop:Generator_ColumnPropNameInRow="Aktivita" msprop:Generator_ColumnPropNameInTable="AktivitaColumn" msprop:Generator_UserColumnName="Aktivita" type="xs:long" />
@@ -1243,7 +1253,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MB" msprop:Generator_TableClassName="MBDataTable" msprop:Generator_TableVarName="tableMB" msprop:Generator_TablePropName="MB" msprop:Generator_RowDeletingName="MBRowDeleting" msprop:Generator_RowChangingName="MBRowChanging" msprop:Generator_RowEvHandlerName="MBRowChangeEventHandler" msprop:Generator_RowDeletedName="MBRowDeleted" msprop:Generator_UserTableName="MB" msprop:Generator_RowChangedName="MBRowChanged" msprop:Generator_RowEvArgName="MBRowChangeEvent" msprop:Generator_RowClassName="MBRow">
+        <xs:element name="MB" msprop:Generator_TableClassName="MBDataTable" msprop:Generator_TableVarName="tableMB" msprop:Generator_RowChangedName="MBRowChanged" msprop:Generator_TablePropName="MB" msprop:Generator_RowDeletingName="MBRowDeleting" msprop:Generator_RowChangingName="MBRowChanging" msprop:Generator_RowEvHandlerName="MBRowChangeEventHandler" msprop:Generator_RowDeletedName="MBRowDeleted" msprop:Generator_RowClassName="MBRow" msprop:Generator_UserTableName="MB" msprop:Generator_RowEvArgName="MBRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1287,7 +1297,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Najponukanajsie" msprop:Generator_TableClassName="NajponukanajsieDataTable" msprop:Generator_TableVarName="tableNajponukanajsie" msprop:Generator_TablePropName="Najponukanajsie" msprop:Generator_RowDeletingName="NajponukanajsieRowDeleting" msprop:Generator_RowChangingName="NajponukanajsieRowChanging" msprop:Generator_RowEvHandlerName="NajponukanajsieRowChangeEventHandler" msprop:Generator_RowDeletedName="NajponukanajsieRowDeleted" msprop:Generator_UserTableName="Najponukanajsie" msprop:Generator_RowChangedName="NajponukanajsieRowChanged" msprop:Generator_RowEvArgName="NajponukanajsieRowChangeEvent" msprop:Generator_RowClassName="NajponukanajsieRow">
+        <xs:element name="Najponukanajsie" msprop:Generator_TableClassName="NajponukanajsieDataTable" msprop:Generator_TableVarName="tableNajponukanajsie" msprop:Generator_RowChangedName="NajponukanajsieRowChanged" msprop:Generator_TablePropName="Najponukanajsie" msprop:Generator_RowDeletingName="NajponukanajsieRowDeleting" msprop:Generator_RowChangingName="NajponukanajsieRowChanging" msprop:Generator_RowEvHandlerName="NajponukanajsieRowChangeEventHandler" msprop:Generator_RowDeletedName="NajponukanajsieRowDeleted" msprop:Generator_RowClassName="NajponukanajsieRow" msprop:Generator_UserTableName="Najponukanajsie" msprop:Generator_RowEvArgName="NajponukanajsieRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Vec" msprop:Generator_ColumnVarNameInTable="columnVec" msprop:Generator_ColumnPropNameInRow="Vec" msprop:Generator_ColumnPropNameInTable="VecColumn" msprop:Generator_UserColumnName="Vec">
@@ -1301,7 +1311,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NajZostava" msprop:Generator_TableClassName="NajZostavaDataTable" msprop:Generator_TableVarName="tableNajZostava" msprop:Generator_TablePropName="NajZostava" msprop:Generator_RowDeletingName="NajZostavaRowDeleting" msprop:Generator_RowChangingName="NajZostavaRowChanging" msprop:Generator_RowEvHandlerName="NajZostavaRowChangeEventHandler" msprop:Generator_RowDeletedName="NajZostavaRowDeleted" msprop:Generator_UserTableName="NajZostava" msprop:Generator_RowChangedName="NajZostavaRowChanged" msprop:Generator_RowEvArgName="NajZostavaRowChangeEvent" msprop:Generator_RowClassName="NajZostavaRow">
+        <xs:element name="NajZostava" msprop:Generator_TableClassName="NajZostavaDataTable" msprop:Generator_TableVarName="tableNajZostava" msprop:Generator_RowChangedName="NajZostavaRowChanged" msprop:Generator_TablePropName="NajZostava" msprop:Generator_RowDeletingName="NajZostavaRowDeleting" msprop:Generator_RowChangingName="NajZostavaRowChanging" msprop:Generator_RowEvHandlerName="NajZostavaRowChangeEventHandler" msprop:Generator_RowDeletedName="NajZostavaRowDeleted" msprop:Generator_RowClassName="NajZostavaRow" msprop:Generator_UserTableName="NajZostava" msprop:Generator_RowEvArgName="NajZostavaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">
@@ -1315,7 +1325,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PocetKuponu" msprop:Generator_TableClassName="PocetKuponuDataTable" msprop:Generator_TableVarName="tablePocetKuponu" msprop:Generator_TablePropName="PocetKuponu" msprop:Generator_RowDeletingName="PocetKuponuRowDeleting" msprop:Generator_RowChangingName="PocetKuponuRowChanging" msprop:Generator_RowEvHandlerName="PocetKuponuRowChangeEventHandler" msprop:Generator_RowDeletedName="PocetKuponuRowDeleted" msprop:Generator_UserTableName="PocetKuponu" msprop:Generator_RowChangedName="PocetKuponuRowChanged" msprop:Generator_RowEvArgName="PocetKuponuRowChangeEvent" msprop:Generator_RowClassName="PocetKuponuRow">
+        <xs:element name="PocetKuponu" msprop:Generator_TableClassName="PocetKuponuDataTable" msprop:Generator_TableVarName="tablePocetKuponu" msprop:Generator_RowChangedName="PocetKuponuRowChanged" msprop:Generator_TablePropName="PocetKuponu" msprop:Generator_RowDeletingName="PocetKuponuRowDeleting" msprop:Generator_RowChangingName="PocetKuponuRowChanging" msprop:Generator_RowEvHandlerName="PocetKuponuRowChangeEventHandler" msprop:Generator_RowDeletedName="PocetKuponuRowDeleted" msprop:Generator_RowClassName="PocetKuponuRow" msprop:Generator_UserTableName="PocetKuponu" msprop:Generator_RowEvArgName="PocetKuponuRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="kupony" msprop:Generator_ColumnVarNameInTable="columnkupony" msprop:Generator_ColumnPropNameInRow="kupony" msprop:Generator_ColumnPropNameInTable="kuponyColumn" msprop:Generator_UserColumnName="kupony" type="xs:long" />
@@ -1329,7 +1339,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Prehled_x0020_trhu" msprop:Generator_TableClassName="Prehled_trhuDataTable" msprop:Generator_TableVarName="tablePrehled_trhu" msprop:Generator_TablePropName="Prehled_trhu" msprop:Generator_RowDeletingName="Prehled_trhuRowDeleting" msprop:Generator_RowChangingName="Prehled_trhuRowChanging" msprop:Generator_RowEvHandlerName="Prehled_trhuRowChangeEventHandler" msprop:Generator_RowDeletedName="Prehled_trhuRowDeleted" msprop:Generator_UserTableName="Prehled trhu" msprop:Generator_RowChangedName="Prehled_trhuRowChanged" msprop:Generator_RowEvArgName="Prehled_trhuRowChangeEvent" msprop:Generator_RowClassName="Prehled_trhuRow">
+        <xs:element name="Prehled_x0020_trhu" msprop:Generator_TableClassName="Prehled_trhuDataTable" msprop:Generator_TableVarName="tablePrehled_trhu" msprop:Generator_RowChangedName="Prehled_trhuRowChanged" msprop:Generator_TablePropName="Prehled_trhu" msprop:Generator_RowDeletingName="Prehled_trhuRowDeleting" msprop:Generator_RowChangingName="Prehled_trhuRowChanging" msprop:Generator_RowEvHandlerName="Prehled_trhuRowChangeEventHandler" msprop:Generator_RowDeletedName="Prehled_trhuRowDeleted" msprop:Generator_RowClassName="Prehled_trhuRow" msprop:Generator_UserTableName="Prehled trhu" msprop:Generator_RowEvArgName="Prehled_trhuRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idnab" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidnab" msprop:Generator_ColumnPropNameInRow="idnab" msprop:Generator_ColumnPropNameInTable="idnabColumn" msprop:Generator_UserColumnName="idnab" type="xs:int" />
@@ -1359,7 +1369,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PSU" msprop:Generator_TableClassName="PSUDataTable" msprop:Generator_TableVarName="tablePSU" msprop:Generator_TablePropName="PSU" msprop:Generator_RowDeletingName="PSURowDeleting" msprop:Generator_RowChangingName="PSURowChanging" msprop:Generator_RowEvHandlerName="PSURowChangeEventHandler" msprop:Generator_RowDeletedName="PSURowDeleted" msprop:Generator_UserTableName="PSU" msprop:Generator_RowChangedName="PSURowChanged" msprop:Generator_RowEvArgName="PSURowChangeEvent" msprop:Generator_RowClassName="PSURow">
+        <xs:element name="PSU" msprop:Generator_TableClassName="PSUDataTable" msprop:Generator_TableVarName="tablePSU" msprop:Generator_RowChangedName="PSURowChanged" msprop:Generator_TablePropName="PSU" msprop:Generator_RowDeletingName="PSURowDeleting" msprop:Generator_RowChangingName="PSURowChanging" msprop:Generator_RowEvHandlerName="PSURowChangeEventHandler" msprop:Generator_RowDeletedName="PSURowDeleted" msprop:Generator_RowClassName="PSURow" msprop:Generator_UserTableName="PSU" msprop:Generator_RowEvArgName="PSURowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1403,7 +1413,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_UserTableName="RAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_RowEvArgName="RAMRowChangeEvent" msprop:Generator_RowClassName="RAMRow">
+        <xs:element name="RAM" msprop:Generator_TableClassName="RAMDataTable" msprop:Generator_TableVarName="tableRAM" msprop:Generator_RowChangedName="RAMRowChanged" msprop:Generator_TablePropName="RAM" msprop:Generator_RowDeletingName="RAMRowDeleting" msprop:Generator_RowChangingName="RAMRowChanging" msprop:Generator_RowEvHandlerName="RAMRowChangeEventHandler" msprop:Generator_RowDeletedName="RAMRowDeleted" msprop:Generator_RowClassName="RAMRow" msprop:Generator_UserTableName="RAM" msprop:Generator_RowEvArgName="RAMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idveci" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidveci" msprop:Generator_ColumnPropNameInRow="idveci" msprop:Generator_ColumnPropNameInTable="idveciColumn" msprop:Generator_UserColumnName="idveci" type="xs:int" />
@@ -1447,7 +1457,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vykon_vs_Kupony" msprop:Generator_TableClassName="Vykon_vs_KuponyDataTable" msprop:Generator_TableVarName="tableVykon_vs_Kupony" msprop:Generator_TablePropName="Vykon_vs_Kupony" msprop:Generator_RowDeletingName="Vykon_vs_KuponyRowDeleting" msprop:Generator_RowChangingName="Vykon_vs_KuponyRowChanging" msprop:Generator_RowEvHandlerName="Vykon_vs_KuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="Vykon_vs_KuponyRowDeleted" msprop:Generator_UserTableName="Vykon_vs_Kupony" msprop:Generator_RowChangedName="Vykon_vs_KuponyRowChanged" msprop:Generator_RowEvArgName="Vykon_vs_KuponyRowChangeEvent" msprop:Generator_RowClassName="Vykon_vs_KuponyRow">
+        <xs:element name="Vykon_vs_Kupony" msprop:Generator_TableClassName="Vykon_vs_KuponyDataTable" msprop:Generator_TableVarName="tableVykon_vs_Kupony" msprop:Generator_RowChangedName="Vykon_vs_KuponyRowChanged" msprop:Generator_TablePropName="Vykon_vs_Kupony" msprop:Generator_RowDeletingName="Vykon_vs_KuponyRowDeleting" msprop:Generator_RowChangingName="Vykon_vs_KuponyRowChanging" msprop:Generator_RowEvHandlerName="Vykon_vs_KuponyRowChangeEventHandler" msprop:Generator_RowDeletedName="Vykon_vs_KuponyRowDeleted" msprop:Generator_RowClassName="Vykon_vs_KuponyRow" msprop:Generator_UserTableName="Vykon_vs_Kupony" msprop:Generator_RowEvArgName="Vykon_vs_KuponyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jmeno" msprop:Generator_ColumnVarNameInTable="columnjmeno" msprop:Generator_ColumnPropNameInRow="jmeno" msprop:Generator_ColumnPropNameInTable="jmenoColumn" msprop:Generator_UserColumnName="jmeno">

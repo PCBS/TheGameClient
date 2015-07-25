@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=192.168.1.1;user id=VS;persistsecurityinfo=True;database=trh;password=hesl"& _ 
-            "oprovs")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=192.168.1.1;user id=VS;password=hesloprovs;persistsecurityinfo=True;databa"& _ 
+            "se=trh")>  _
         Public ReadOnly Property trhConnectionString() As String
             Get
                 Return CType(Me("trhConnectionString"),String)
@@ -75,9 +75,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.TheGame.My.MySettings
+        Friend ReadOnly Property Settings() As Global.TheGameGenerator.My.MySettings
             Get
-                Return Global.TheGame.My.MySettings.Default
+                Return Global.TheGameGenerator.My.MySettings.Default
             End Get
         End Property
     End Module

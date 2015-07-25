@@ -18,55 +18,43 @@ Public Class Form1
         End Function
     End Structure
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.RAMTableAdapter.Fill(Me.trhDataSet.RAM)
-        Me.PSUTableAdapter.Fill(Me.trhDataSet.PSU)
-        Me.MBTableAdapter.Fill(Me.trhDataSet.MB)
-        Me.HDDTableAdapter.Fill(Me.trhDataSet.HDD)
-        Me.GPUTableAdapter.Fill(Me.trhDataSet.GPU)
-        Me.CPUTableAdapter.Fill(Me.trhDataSet.CPU)
-        Me.VeciTableAdapter1.Fill(Me.trhDataSet.veci)
-        Me.ReceptyTableAdapter1.Fill(Me.trhDataSet.recepty)
-    End Sub
-
     Private Sub VsechnyKompy()
 
         Dim rr As New StreamWriter("C:\temp\kompy.csv", False)
         Try
-            With Me.trhDataSet 'for, not for each
-                Parallel.ForEach(Of trhDataSet.MBRow)(.MB, Sub(mb As trhDataSet.MBRow)
-                                                               'For Each mb As trhDataSet.MBRow In .MB
-                                                               For Each cpu As trhDataSet.CPURow In .CPU.Select("socket='" & mb.socket & "'")
-                                                                   For Each gpu() As DataRow In SelectMore(.GPU, mb.sloty.Split(";")(0))
-                                                                       For Each ram() As DataRow In SelectMore(.RAM, mb.sloty.Split(";")(1))
-                                                                           For Each hdd As trhDataSet.HDDRow In .HDD
-                                                                               For Each psu As trhDataSet.PSURow In .PSU
-                                                                                   Dim vykon = CInt(GetVykon(mb.idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
-                                                                                   If vykon > 0 Then
-                                                                                       'Dim komp As New pc
-                                                                                       'komp.mb = mb
-                                                                                       'komp.cpu = cpu
-                                                                                       'komp.gpu = gpu
-                                                                                       'komp.ram = ram
-                                                                                       'komp.hdd = hdd
-                                                                                       'komp.psu = psu
-                                                                                       'komp.vykon = vykon
-                                                                                       'getprice
-                                                                                       SyncLock rr
-                                                                                           rr.WriteLine(String.Join(", ", vykon, mb.nazev, cpu.nazev, GetNames(gpu), GetNames(ram), hdd.nazev, psu.nazev))
-                                                                                       End SyncLock
-                                                                                   End If
-                                                                                   'vytvorit row, pridat serializaci a vlozit do tabulky
-                                                                                   'trhDataSet.mozne_sestavy.Rows.Add()
-                                                                                   Button1.Text = Long.Parse(Button1.Text) + 1
-                                                                                   'Application.DoEvents()
-                                                                               Next
-                                                                           Next
-                                                                       Next
-                                                                   Next
-                                                               Next
-                                                               'Next
-                                                           End Sub)
+            With Me.TrhDataSet
+                Parallel.For(0, .MB.Rows.Count, Sub(mb As Integer)
+                                                    For Each cpu As trhDataSet.CPURow In .CPU.Select("socket='" & .MB(mb).socket & "'")
+                                                        For Each gpu() As DataRow In SelectMore(.GPU, .MB(mb).sloty.Split(";")(0))
+                                                            For Each ram() As DataRow In SelectMore(.RAM, .MB(mb).sloty.Split(";")(1))
+                                                                For Each hdd As trhDataSet.HDDRow In .HDD
+                                                                    For Each psu As trhDataSet.PSURow In .PSU
+                                                                        Dim vykon = CInt(GetVykon(.MB(mb).idveci, cpu.idveci, id(gpu), id(ram), hdd.idveci, psu.idveci))
+                                                                        If vykon > 0 Then
+                                                                            'Dim komp As New pc
+                                                                            'komp.mb = mb
+                                                                            'komp.cpu = cpu
+                                                                            'komp.gpu = gpu
+                                                                            'komp.ram = ram
+                                                                            'komp.hdd = hdd
+                                                                            'komp.psu = psu
+                                                                            'komp.vykon = vykon
+                                                                            'getprice
+                                                                            SyncLock rr
+                                                                                rr.WriteLine(String.Join(", ", vykon, .MB(mb).nazev, cpu.nazev, GetNames(gpu), GetNames(ram), hdd.nazev, psu.nazev))
+                                                                            End SyncLock
+                                                                        End If
+                                                                        'vytvorit row, pridat serializaci a vlozit do tabulky
+                                                                        'trhDataSet.mozne_sestavy.Rows.Add()
+                                                                        Button1.Text = Long.Parse(Button1.Text) + 1
+                                                                        'Application.DoEvents()
+                                                                    Next
+                                                                Next
+                                                            Next
+                                                        Next
+                                                    Next
+                                                    'Next
+                                                End Sub)
             End With
         Catch ex As Exception
             MsgBox(Err.Number & " - " & Err.Description, MsgBoxStyle.Critical, ex.ToString)
@@ -265,5 +253,10 @@ Public Class Form1
         Next
         Return vysl
     End Function
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'TrhDataSet.veci' table. You can move, or remove it, as needed.
+        Me.VeciTableAdapter.Fill(Me.TrhDataSet.veci)
+    End Sub
 
 End Class

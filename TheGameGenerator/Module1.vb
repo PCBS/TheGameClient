@@ -6,7 +6,7 @@
         Console.Title = 0
         trh.Fill((New trhDataSet).veci)
         Dim veci As trhDataSet.veciDataTable = trh.GetData()
-        Dim GPUdict As List(Of trhDataSet.veciRow()) = GenerateGPUList(veci)
+        Dim GPUdict As Dictionary(Of Integer, trhDataSet.veciRow()) = GenerateGPUDict(veci)
         Parallel.ForEach(Of trhDataSet.veciRow)(veci.Select("typ='mb'"), Sub(mb As trhDataSet.veciRow)
                                                                              For Each cpu As trhDataSet.veciRow In veci.Select("socket='" & mb.socket & "'")
                                                                                  For Each gpu() As trhDataSet.veciRow In SelectGPUs(GPUdict, mb, cpu)
@@ -114,12 +114,15 @@
         End Select
     End Function
 
-    Private Function GenerateGPUList(veci As trhDataSet.veciDataTable) As List(Of trhDataSet.veciRow())
+    Private Function GenerateGPUDict(veci As trhDataSet.veciDataTable) As Dictionary(Of Integer, trhDataSet.veciRow())
         Throw New NotImplementedException
+        'Dictionary
+        'TODO kombinace grafik, tak ze se pro kazdy vykon vezme kombinace grafik, ktera bude levnejsi
     End Function
 
-    Private Function SelectGPUs(GPUdict As List(Of trhDataSet.veciRow()), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
+    Private Function SelectGPUs(GPUdict As Dictionary(Of Integer, trhDataSet.veciRow()), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
         Throw New NotImplementedException
+        'TODO vybrat grafiky hodici se vykonem
     End Function
 
     Private Function GetCost(id As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable) As Integer
@@ -132,7 +135,9 @@
             End If
         Next
         If surovinyOnly Then
-
+            'TODO: vzit cost v zeleze
+        Else
+            'TODO: rekurze
         End If
     End Function
 

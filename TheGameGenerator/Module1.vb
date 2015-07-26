@@ -6,7 +6,7 @@
         Console.Title = 0
         trh.Fill((New trhDataSet).veci)
         Dim veci As trhDataSet.veciDataTable = trh.GetData()
-        Dim GPUdict As Dictionary(Of Integer, trhDataSet.veciRow()) = GenerateGPUDict(veci)
+        Dim GPUdict As Dictionary(Of Integer, List(Of Integer)) = GenerateGPUDict(73, 118, 4) '4 je pocet grafik v nejlepsi desce
         Parallel.ForEach(Of trhDataSet.veciRow)(veci.Select("typ='mb'"), Sub(mb As trhDataSet.veciRow)
                                                                              For Each cpu As trhDataSet.veciRow In veci.Select("socket='" & mb.socket & "'")
                                                                                  For Each gpu() As trhDataSet.veciRow In SelectGPUs(GPUdict, mb, cpu)
@@ -114,13 +114,45 @@
         End Select
     End Function
 
-    Private Function GenerateGPUDict(veci As trhDataSet.veciDataTable) As Dictionary(Of Integer, trhDataSet.veciRow())
+    Public Function GetVykonGPU(gpus As List(Of Integer), veci As trhDataSet.veciDataTable) As Decimal
+        Dim vykon As Decimal
+        For Each gpuID In gpus
+            vykon += veci.Select("idveci='" & gpuID & "'")(0)("vykon")
+        Next
+        vykon *= Math.Pow(0.9, gpus.Count - 1)
+        Return vykon
+    End Function
+
+    Private Function GenerateGPUDict(IDfrom As Integer, idTO As Integer, count As Integer, veci As trhDataSet.veciDataTable) As Dictionary(Of Integer, List(Of Integer))
         Throw New NotImplementedException
         'Dictionary
         'TODO kombinace grafik, tak ze se pro kazdy vykon vezme kombinace grafik, ktera bude levnejsi
+        Dim list As New List(Of List(Of Integer))
+        For gpuID = IDfrom To idTO
+            Dim gpus As New List(Of Integer)
+            gpus.Add(gpuID)
+            list.Add(gpus)
+        Next
+        For i As Integer = 2 To count
+            Dim list2 As New List(Of List(Of Integer))
+            For Each gpus In list
+                For gpuID = IDfrom To idTO
+                    Dim gpus2 = gpus
+                    gpus2.Add(gpuID)
+                    list2.Add(gpus2)
+                Next
+            Next
+            list.Clear()
+            list.AddRange(list2)
+        Next
+        Dim dict As New Dictionary(Of Integer, List(Of Integer))
+        For Each gpus In list
+            dict.Add(GetVykonGPU(gpus, veci), gpus)
+        Next
+        'predelat na dicts vykonama
     End Function
 
-    Private Function SelectGPUs(GPUdict As Dictionary(Of Integer, trhDataSet.veciRow()), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
+    Private Function SelectGPUs(GPUdict As Dictionary(Of Integer, List(Of Integer))), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
         Throw New NotImplementedException
         'TODO vybrat grafiky hodici se vykonem
     End Function

@@ -1,12 +1,14 @@
 ﻿Module Module1
-    Dim trh As New TheGameGenerator.trhDataSetTableAdapters.veciTableAdapter()
-    Dim waittime As trhDataSet.veciRow
+    Dim veciAdapter As New TheGameGenerator.trhDataSetTableAdapters.veciTableAdapter()
+    Dim receptyAdapter As New TheGameGenerator.trhDataSetTableAdapters.receptyTableAdapter()
     Dim idsurovin() = {1, 2, 3, 4}
     Sub Main()
         Console.Title = 0
-        trh.Fill((New trhDataSet).veci)
-        Dim veci As trhDataSet.veciDataTable = trh.GetData()
-        Dim GPUdict As Dictionary(Of Integer, List(Of Integer)) = GenerateGPUDict(73, 118, 4) '4 je pocet grafik v nejlepsi desce
+        veciAdapter.Fill((New trhDataSet).veci)
+        receptyAdapter.Fill((New trhDataSet).recepty)
+        Dim veci As trhDataSet.veciDataTable = veciAdapter.GetData()
+        Dim recepty As trhDataSet.receptyDataTable = receptyAdapter.GetData()
+        Dim GPUdict As Dictionary(Of Integer, List(Of Integer)) = GenerateGPUDict(73, 118, 4, veci, recepty) '4 je pocet grafik v nejlepsi desce
         Parallel.ForEach(Of trhDataSet.veciRow)(veci.Select("typ='mb'"), Sub(mb As trhDataSet.veciRow)
                                                                              For Each cpu As trhDataSet.veciRow In veci.Select("socket='" & mb.socket & "'")
                                                                                  For Each gpu() As trhDataSet.veciRow In SelectGPUs(GPUdict, mb, cpu)

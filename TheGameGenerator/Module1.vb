@@ -123,10 +123,8 @@
         Return vykon
     End Function
 
-    Private Function GenerateGPUDict(IDfrom As Integer, idTO As Integer, count As Integer, veci As trhDataSet.veciDataTable) As Dictionary(Of Integer, List(Of Integer))
+    Private Function GenerateGPUDict(IDfrom As Integer, idTO As Integer, count As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable) As Dictionary(Of Integer, List(Of Integer))
         Throw New NotImplementedException
-        'Dictionary
-        'TODO kombinace grafik, tak ze se pro kazdy vykon vezme kombinace grafik, ktera bude levnejsi
         Dim list As New List(Of List(Of Integer))
         For gpuID = IDfrom To idTO
             Dim gpus As New List(Of Integer)
@@ -147,17 +145,24 @@
         Next
         Dim dict As New Dictionary(Of Integer, List(Of Integer))
         For Each gpus In list
-            dict.Add(GetVykonGPU(gpus, veci), gpus)
+            Dim vykon = GetVykonGPU(gpus, veci)
+            If dict.ContainsKey(vykon) Then
+                If GetCost(veci, recepty, gpus) < GetCost(veci, recepty, dict(vykon)) Then
+                    dict(vykon) = gpus
+                End If
+            Else
+                dict.Add(vykon, gpus)
+            End If
         Next
-        'predelat na dicts vykonama
+        Return dict
     End Function
 
-    Private Function SelectGPUs(GPUdict As Dictionary(Of Integer, List(Of Integer))), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
+    Private Function SelectGPUs(GPUdict As Dictionary(Of Integer, List(Of Integer)), mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow) As Object
         Throw New NotImplementedException
         'TODO vybrat grafiky hodici se vykonem
     End Function
 
-    Private Function GetCost(id As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable) As Integer
+    Private Function GetCost(veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable, id As Integer) As Integer
         Throw New NotImplementedException
         Dim recept As Dictionary(Of Integer, Integer) = GetRecept(id, recepty)
         Dim surovinyOnly As Boolean = True
@@ -173,10 +178,18 @@
         End If
     End Function
 
-    Private Function GetCost(ParamArray ids() As Integer)
+    Private Function GetCost(veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable, ParamArray ids() As Integer) As Integer
         Dim cost = 0
         For Each id In ids
-            cost += GetCost(id)
+            cost += GetCost(veci, recepty, id)
+        Next
+        Return cost
+    End Function
+
+    Private Function GetCost(veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable, ids As List(Of Integer)) As Integer
+        Dim cost = 0
+        For Each id In ids
+            cost += GetCost(veci, recepty, id)
         Next
         Return cost
     End Function

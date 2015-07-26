@@ -1,32 +1,27 @@
 ﻿Module Module1
-    Dim veciAdapter As New TheGameGenerator.trhDataSetTableAdapters.veciTableAdapter()
-    Dim receptyAdapter As New TheGameGenerator.trhDataSetTableAdapters.receptyTableAdapter()
     Dim idsurovin() = {1, 2, 3, 4}
     Sub Main()
+        Dim db As New trhEntities
         Console.Title = 0
-        veciAdapter.Fill((New trhDataSet).veci)
-        receptyAdapter.Fill((New trhDataSet).recepty)
-        Dim veci As trhDataSet.veciDataTable = veciAdapter.GetData()
-        Dim recepty As trhDataSet.receptyDataTable = receptyAdapter.GetData()
-        Dim GPUdict As Dictionary(Of Integer, List(Of Integer)) = GenerateGPUDict(73, 118, 4, veci, recepty) '4 je pocet grafik v nejlepsi desce
-        Parallel.ForEach(Of trhDataSet.veciRow)(veci.Select("typ='mb'"), Sub(mb As trhDataSet.veciRow)
-                                                                             For Each cpu As trhDataSet.veciRow In veci.Select("socket='" & mb.socket & "'")
-                                                                                 For Each gpu() As trhDataSet.veciRow In SelectGPUs(GPUdict, mb, cpu)
-                                                                                     For Each ramkap As Integer In {1, 2, 4, 6, 8, 12, 14, 16, 24, 32, 64}
-                                                                                         For Each hddvyk As Integer In {1, 2, 3, 4, 8, 16, 32, 64, 128, 256}
-                                                                                             Dim spotreba As Integer = 0
-                                                                                             Dim psu As trhDataSet.veciRow = veci.Select("typ='psu' AND vykon>'" & spotreba * 1.1 & "'", "vykon ASC").First
-                                                                                             'Dim vykon = CInt(GetVykon(mb, cpu, gpu, ramkap, hddvyk, psu))
-                                                                                             'If vykon > 0 Then
-                                                                                             'Console.WriteLine(vykon & " - " & String.Join(",   ", cpu.nazev, gpu.nazev, ram.nazev, hdd.nazev, psu.nazev))
-                                                                                             'End If
-                                                                                             Console.Title = Long.Parse(Console.Title) + 1
-                                                                                         Next
-                                                                                     Next
-                                                                                 Next
-                                                                             Next
-                                                                         End Sub)
-        Console.ReadKey()
+        Dim GPUdict As Dictionary(Of Integer, List(Of Integer)) = GenerateGPUDict(73, 118, 4, db.vecis, db.recepties) '4 je pocet grafik v nejlepsi desce
+        Parallel.ForEach(Of System.Data.Entity.DbSet(Of TheGameGenerator.veci))(db.vecis, Sub(mb As trhDataSet.veciRow)
+                                                                                              For Each cpu As trhDataSet.veciRow In veci.Select("socket='" & mb.socket & "'")
+                                                                                                  For Each gpu() As trhDataSet.veciRow In SelectGPUs(GPUdict, mb, cpu)
+                                                                                                      For Each ramkap As Integer In {1, 2, 4, 6, 8, 12, 14, 16, 24, 32, 64}
+                                                                                                          For Each hddvyk As Integer In {1, 2, 3, 4, 8, 16, 32, 64, 128, 256}
+                                                                                                              Dim spotreba As Integer = 0
+                                                                                                              Dim psu As trhDataSet.veciRow = veci.Select("typ='psu' AND vykon>'" & spotreba * 1.1 & "'", "vykon ASC").First
+                                                                                                              'Dim vykon = CInt(GetVykon(mb, cpu, gpu, ramkap, hddvyk, psu))
+                                                                                                              'If vykon > 0 Then
+                                                                                                              'Console.WriteLine(vykon & " - " & String.Join(",   ", cpu.nazev, gpu.nazev, ram.nazev, hdd.nazev, psu.nazev))
+                                                                                                              'End If
+                                                                                                              Console.Title = Long.Parse(Console.Title) + 1
+                                                                                                          Next
+                                                                                                      Next
+                                                                                                  Next
+                                                                                              Next
+                                                                                          End Sub) 'TODO only compatibile motherboards
+
 
     End Sub
 
@@ -125,7 +120,7 @@
         Return vykon
     End Function
 
-    Private Function GenerateGPUDict(IDfrom As Integer, idTO As Integer, count As Integer, veci As trhDataSet.veciDataTable, recepty As trhDataSet.receptyDataTable) As Dictionary(Of Integer, List(Of Integer))
+    Private Function GenerateGPUDict(IDfrom As Integer, idTO As Integer, count As Integer, veci As System.Data.Entity.DbSet(Of TheGameGenerator.veci), recepty As System.Data.Entity.DbSet(Of TheGameGenerator.recepty)) As Dictionary(Of Integer, List(Of Integer))
         Throw New NotImplementedException
         Dim list As New List(Of List(Of Integer))
         For gpuID = IDfrom To idTO

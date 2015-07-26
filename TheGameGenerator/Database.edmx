@@ -79,8 +79,6 @@
                 <ScalarProperty Name="doba" ColumnName="doba" />
                 <ScalarProperty Name="vyzkum" ColumnName="vyzkum" />
               </MappingFragment>
-              <MappingFragment StoreEntitySet="veci" >
-              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vecis">

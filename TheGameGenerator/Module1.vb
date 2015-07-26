@@ -14,10 +14,10 @@
                                                                                          For Each hddvyk As Integer In {1, 2, 3, 4, 8, 16, 32, 64, 128, 256}
                                                                                              Dim spotreba As Integer = 0
                                                                                              Dim psu As trhDataSet.veciRow = veci.Select("typ='psu' AND vykon>'" & spotreba * 1.1 & "'", "vykon ASC").First
-                                                                                             Dim vykon = CInt(GetVykon(mb, cpu, gpu, ramkap, hddvyk, psu))
-                                                                                             If vykon > 0 Then
-                                                                                                 'Console.WriteLine(vykon & " - " & String.Join(",   ", cpu.nazev, gpu.nazev, ram.nazev, hdd.nazev, psu.nazev))
-                                                                                             End If
+                                                                                             'Dim vykon = CInt(GetVykon(mb, cpu, gpu, ramkap, hddvyk, psu))
+                                                                                             'If vykon > 0 Then
+                                                                                             'Console.WriteLine(vykon & " - " & String.Join(",   ", cpu.nazev, gpu.nazev, ram.nazev, hdd.nazev, psu.nazev))
+                                                                                             'End If
                                                                                              Console.Title = Long.Parse(Console.Title) + 1
                                                                                          Next
                                                                                      Next
@@ -28,37 +28,37 @@
 
     End Sub
 
-    Public Function GetVykon(mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow, gpu() As trhDataSet.veciRow, ram() As trhDataSet.veciRow, hdd As trhDataSet.veciRow, psu As trhDataSet.veciRow) As Decimal
-        Dim gpupow As Decimal = 0
-        For i As Integer = 0 To gpu.Count - 1
-            gpu(i) = GetItemInfo(igpu(i), "gpu")
-            gpupow += gpu(i).vykon
-            spotreba += gpu(i).spotreba
-        Next
-        gpupow *= Math.Pow(0.9, gpu.Count)
-        'RAM
-        Dim ram(iram.Count) As TheGame.trhDataSet.veciRow
-        Dim ramkap As Integer = 0
-        For i As Integer = 0 To iram.Count - 1
-            ram(i) = GetItemInfo(iram(i), "ram")
-            ramkap += ram(i).vykon
-            spotreba += ram(i).spotreba
-        Next
-        Dim rampow As Decimal = GetVykonRAM(ramkap)
-        'HDD
-        Dim hdd As TheGame.trhDataSet.veciRow = GetItemInfo(ihdd, "hdd")
-        Dim hddpow As Decimal = GetVykonHDD(hdd.vykon)
-        spotreba += hdd.spotreba
-        'PSU
-        Dim psu As TheGame.trhDataSet.veciRow = GetItemInfo(ipsu, "psu")
-        'vykon
-        Dim vykon = cpu.vykon ' Math.Min(cpu.vykon, gpupow) * 2 * rampow * hddpow
-        If mb.sloty.Split(";")(0) < ram.Count Then vykon = 0
-        If mb.sloty.Split(";")(1) < gpu.Count Then vykon = 0
-        If psu.vykon < spotreba * 1.1 Then vykon = 0
-        If Not mb.socket = cpu.socket Then vykon = 0
-        Return vykon
-    End Function
+    'Public Function GetVykon(mb As trhDataSet.veciRow, cpu As trhDataSet.veciRow, gpu() As trhDataSet.veciRow, ram() As trhDataSet.veciRow, hdd As trhDataSet.veciRow, psu As trhDataSet.veciRow) As Decimal
+    '    Dim gpupow As Decimal = 0
+    '    For i As Integer = 0 To gpu.Count - 1
+    '        gpu(i) = GetItemInfo(igpu(i), "gpu")
+    '        gpupow += gpu(i).vykon
+    '        spotreba += gpu(i).spotreba
+    '    Next
+    '    gpupow *= Math.Pow(0.9, gpu.Count)
+    '    'RAM
+    '    Dim ram(iram.Count) As TheGame.trhDataSet.veciRow
+    '    Dim ramkap As Integer = 0
+    '    For i As Integer = 0 To iram.Count - 1
+    '        ram(i) = GetItemInfo(iram(i), "ram")
+    '        ramkap += ram(i).vykon
+    '        spotreba += ram(i).spotreba
+    '    Next
+    '    Dim rampow As Decimal = GetVykonRAM(ramkap)
+    '    'HDD
+    '    Dim hdd As TheGame.trhDataSet.veciRow = GetItemInfo(ihdd, "hdd")
+    '    Dim hddpow As Decimal = GetVykonHDD(hdd.vykon)
+    '    spotreba += hdd.spotreba
+    '    'PSU
+    '    Dim psu As TheGame.trhDataSet.veciRow = GetItemInfo(ipsu, "psu")
+    '    'vykon
+    '    Dim vykon = cpu.vykon ' Math.Min(cpu.vykon, gpupow) * 2 * rampow * hddpow
+    '    If mb.sloty.Split(";")(0) < ram.Count Then vykon = 0
+    '    If mb.sloty.Split(";")(1) < gpu.Count Then vykon = 0
+    '    If psu.vykon < spotreba * 1.1 Then vykon = 0
+    '    If Not mb.socket = cpu.socket Then vykon = 0
+    '    Return vykon
+    'End Function
 
     Public Function GetVykonRAM(ramkap As Integer) As Decimal
         Select Case ramkap
